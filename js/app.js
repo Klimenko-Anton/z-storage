@@ -1767,6 +1767,8 @@ modules_flsModules.select = new SelectConstructor({});
 window.addEventListener("DOMContentLoaded", function () {
   // windowObserver();
   document.addEventListener("click", documentActions);
+  console.log(window.innerWidth, window.innerHeight);
+
 });
 
 
@@ -1778,25 +1780,112 @@ function documentActions(e) {
   } else if (!targetElement.closest(".profile-aside__wrapper") && document.querySelector(".profile-aside__accounts._open-accounts")) {
     document.querySelector(".profile-aside__accounts").classList.remove("_open-accounts")
   }
+
+  if (targetElement.closest("[data-dropdown]")) {
+    const activeDropdown = document.querySelector("._open-dropdown");
+    targetElement.closest(".item-files").classList.toggle("_open-dropdown");
+
+    if (activeDropdown && activeDropdown !== targetElement) {
+      activeDropdown.classList.remove("_open-dropdown");
+    }
+  }
+  else if (!targetElement.closest(".dropdown-menu") && document.querySelector(".item-files._open-dropdown")) {
+    document.querySelector(".item-files").classList.remove("_open-dropdown");
+  }
 };
 
 
-function filesCheckedUpdates() {
+// function filesCheckedUpdates() {
 
+//   const fileCheckbox = document.querySelector(".list-files__checkbox");
+//   const checkboxInput = fileCheckbox?.querySelector(".checkbox__input");
+
+//   if (fileCheckbox && checkboxInput) {
+//     const filesItems = document.querySelectorAll(".item-files");
+
+//     const updateMasterCheckbox = () => {
+//       const allChecked = Array.from(filesItems).every(item => {
+//         const checkbox = item.querySelector(".checkbox__input");
+//         return checkbox?.checked;
+//       });
+//       checkboxInput.checked = allChecked;
+//     };
+
+//     checkboxInput.addEventListener("change", function (e) {
+//       filesItems.forEach(item => {
+//         const checkboxItemFiles = item.querySelector(".checkbox__input");
+//         if (checkboxItemFiles) {
+//           checkboxItemFiles.checked = e.target.checked;
+//           if (e.target.checked) {
+//             item.classList.add("item-files--active");
+//           } else {
+//             item.classList.remove("item-files--active");
+//           }
+//         }
+//       });
+//     });
+
+//     filesItems.forEach(item => {
+//       const checkboxItemFiles = item.querySelector(".checkbox__input");
+//       if (checkboxItemFiles) {
+//         checkboxItemFiles.addEventListener("change", function () {
+//           updateMasterCheckbox();
+
+//           if (this.checked) {
+//             item.classList.add("item-files--active");
+//           } else {
+//             item.classList.remove("item-files--active");
+//           }
+//         });
+//       }
+//     });
+//   }
+// }
+
+
+function filesCheckedUpdates() {
   const fileCheckbox = document.querySelector(".list-files__checkbox");
   const checkboxInput = fileCheckbox?.querySelector(".checkbox__input");
+  const filesItems = document.querySelectorAll(".item-files");
 
-  if (fileCheckbox && checkboxInput) {
-    const filesItems = document.querySelectorAll(".item-files");
+  // Функция для обновления главного чекбокса (если он существует)
+  const updateMasterCheckbox = () => {
+    if (!checkboxInput) return;
 
-    const updateMasterCheckbox = () => {
-      const allChecked = Array.from(filesItems).every(item => {
-        const checkbox = item.querySelector(".checkbox__input");
-        return checkbox?.checked;
+    const allChecked = Array.from(filesItems).every(item => {
+      const checkbox = item.querySelector(".checkbox__input");
+      return checkbox?.checked;
+    });
+    checkboxInput.checked = allChecked;
+  };
+
+  // Обработчик для отдельных чекбоксов
+  const handleItemCheckboxChange = function (checkbox, item) {
+    if (checkbox.checked) {
+      item.classList.add("item-files--active");
+    } else {
+      item.classList.remove("item-files--active");
+    }
+    updateMasterCheckbox(); // Обновляем главный чекбокс, если он есть
+  };
+
+  // Инициализация обработчиков для каждого отдельного чекбокса
+  filesItems.forEach(item => {
+    const checkboxItemFiles = item.querySelector(".checkbox__input");
+    if (checkboxItemFiles) {
+      checkboxItemFiles.addEventListener("change", function () {
+        handleItemCheckboxChange(this, item);
       });
-      checkboxInput.checked = allChecked;
-    };
 
+      // Опционально: установить состояние класса при загрузке (если чекбокс уже был отмечен)
+      if (checkboxItemFiles.checked) {
+        item.classList.add("item-files--active");
+      }
+    }
+  });
+
+  // Логика главного чекбокса (только если он существует)
+  if (fileCheckbox && checkboxInput) {
     checkboxInput.addEventListener("change", function (e) {
       filesItems.forEach(item => {
         const checkboxItemFiles = item.querySelector(".checkbox__input");
@@ -1809,26 +1898,240 @@ function filesCheckedUpdates() {
           }
         }
       });
-    });
-
-    filesItems.forEach(item => {
-      const checkboxItemFiles = item.querySelector(".checkbox__input");
-      if (checkboxItemFiles) {
-        checkboxItemFiles.addEventListener("change", function () {
-          updateMasterCheckbox();
-
-          if (this.checked) {
-            item.classList.add("item-files--active");
-          } else {
-            item.classList.remove("item-files--active");
-          }
-        });
-      }
+      updateMasterCheckbox(); // Убедимся, что состояние актуально
     });
   }
 }
 
+
 filesCheckedUpdates();
+
+/*
+function initDropdown() {
+  const DROPDOWN_TRIGGER = '[data-dropdown]';
+  const DROPDOWN_MENU = '.dropdown-menu';
+  const ACTIVE_CLASS = '_open-dropdown';
+
+  function closeAllDropdowns(except) {
+    document.querySelectorAll(`${DROPDOWN_MENU}.${ACTIVE_CLASS}`).forEach(menu => {
+      if (menu !== except) {
+        menu.classList.remove(ACTIVE_CLASS);
+      }
+    });
+  }
+
+  function getAvailableSpace(buttonRect) {
+    const spaceBelow = window.innerHeight - buttonRect.bottom;
+    const spaceAbove = buttonRect.top;
+    return { spaceBelow, spaceAbove };
+  }
+
+  function positionDropdown(menu, buttonRect, menuHeight) {
+    const { spaceBelow, spaceAbove } = getAvailableSpace(buttonRect);
+
+    // Решаем, куда открывать
+    const shouldOpenUp = spaceBelow < menuHeight && spaceAbove > spaceBelow;
+
+    menu.style.top = 'auto';
+    menu.style.bottom = 'auto';
+    // menu.style.right = '40px'; // или toRem(40), но лучше в CSS
+
+    if (shouldOpenUp) {
+      menu.style.bottom = `${window.innerHeight - buttonRect.top}px`;
+      menu.style.transformOrigin = 'right bottom';
+    } else {
+      menu.style.top = `${buttonRect.top + window.scrollY}px`;
+      menu.style.transformOrigin = 'right top';
+    }
+  }
+
+  // Открытие/закрытие по клику
+  document.addEventListener('click', function (e) {
+    const trigger = e.target.closest(DROPDOWN_TRIGGER);
+
+
+    if (trigger) {
+      const item = trigger.closest("[data-dropdown-parent]");
+
+      const menu = item?.querySelector(DROPDOWN_MENU);
+      if (!menu) return;
+
+      const isOpen = item.classList.contains(ACTIVE_CLASS);
+
+
+      // Закрываем все, кроме этого
+      closeAllDropdowns(item);
+
+
+      if (!isOpen) {
+        // Перед открытием — позиционируем
+        const buttonRect = trigger.getBoundingClientRect();
+        const menuHeight = menu.scrollHeight;
+
+        positionDropdown(menu, buttonRect, menuHeight);
+        // menu.classList.add(ACTIVE_CLASS);
+        item.classList.toggle(ACTIVE_CLASS);
+      }
+
+      e.stopPropagation();
+    }
+  });
+
+  // Закрытие при клике вне
+  document.addEventListener('click', function () {
+    closeAllDropdowns();
+  });
+
+  // Опционально: закрытие при скролле
+  window.addEventListener('scroll', closeAllDropdowns, true);
+}
+*/
+
+// function initDropdown() {
+//   const DROPDOWN_TRIGGER = '[data-dropdown]';
+//   const DROPDOWN_PARENT = '[data-dropdown-parent]';
+//   const ACTIVE_CLASS = '_open-dropdown';
+
+//   // Закрыть все открытые dropdown'ы, кроме указанного
+//   function closeAllDropdowns(exceptParent) {
+//     document.querySelectorAll(`${DROPDOWN_PARENT}.${ACTIVE_CLASS}`).forEach(parent => {
+//       if (parent !== exceptParent) {
+//         parent.classList.remove(ACTIVE_CLASS);
+//       }
+//     });
+//   }
+
+//   function getAvailableSpace(buttonRect) {
+//     const spaceBelow = window.innerHeight - buttonRect.bottom;
+//     const spaceAbove = buttonRect.top;
+//     return { spaceBelow, spaceAbove };
+//   }
+
+//   function positionDropdown(menu, buttonRect, menuHeight) {
+//     const { spaceBelow, spaceAbove } = getAvailableSpace(buttonRect);
+//     const shouldOpenUp = spaceBelow < menuHeight && spaceAbove > spaceBelow;
+
+//     menu.style.top = 'auto';
+//     menu.style.bottom = 'auto';
+
+//     if (shouldOpenUp) {
+//       menu.style.bottom = `${window.innerHeight - buttonRect.top}px`;
+//       menu.style.transformOrigin = 'right bottom';
+//     } else {
+//       menu.style.top = `${buttonRect.top + window.scrollY}px`;
+//       menu.style.transformOrigin = 'right top';
+//     }
+//   }
+
+//   // Клик по документу
+//   document.addEventListener('click', function (e) {
+//     const trigger = e.target.closest(DROPDOWN_TRIGGER);
+//     console.log(trigger);
+
+
+//     if (trigger) {
+//       const parent = trigger.closest(DROPDOWN_PARENT);
+//       const menu = parent?.querySelector('.dropdown-menu');
+
+//       console.log(parent);
+
+
+//       if (!parent || !menu) return;
+
+//       const isOpen = parent.classList.contains(ACTIVE_CLASS);
+
+//       // Закрываем все, кроме этого
+//       closeAllDropdowns(parent);
+
+//       if (!isOpen) {
+//         // Позиционируем перед открытием
+//         const buttonRect = trigger.getBoundingClientRect();
+//         const menuHeight = menu.scrollHeight;
+//         positionDropdown(menu, buttonRect, menuHeight);
+
+//         // Открываем
+//         parent.classList.toggle(ACTIVE_CLASS);
+//       }
+
+//       e.stopPropagation();
+//     }
+//   });
+
+//   // Закрытие при клике вне
+//   document.addEventListener('click', function () {
+//     closeAllDropdowns(); // закрываем все
+//   });
+
+
+//   // Закрытие при скролле
+//   window.addEventListener('scroll', function () {
+//     closeAllDropdowns();
+//   }, true);
+// }
+
+
+
+
+// function initDropdown() {
+//   const ACTIVE_CLASS = '_open-dropdown';
+
+//   document.addEventListener('click', function (e) {
+//     const trigger = e.target.closest('[data-dropdown]');
+//     if (!trigger) return;
+
+//     // Находим родителя с data-dropdown-parent
+//     const parent = trigger.closest('[data-dropdown-parent]');
+//     if (!parent) return;
+
+//     const menu = parent.querySelector('.dropdown-menu');
+//     if (!menu) return;
+
+//     // Если меню уже открыто — закрываем
+//     if (menu.classList.contains(ACTIVE_CLASS)) {
+//       menu.classList.remove(ACTIVE_CLASS);
+//       return;
+//     }
+
+//     // Закрываем все другие меню
+//     document.querySelectorAll('.dropdown-menu.' + ACTIVE_CLASS).forEach(m => {
+//       m.classList.remove(ACTIVE_CLASS);
+//     });
+
+//     // Позиционируем: вверх или вниз
+//     const buttonRect = trigger.getBoundingClientRect();
+//     const menuRect = menu.getBoundingClientRect();
+//     const spaceBelow = window.innerHeight - buttonRect.bottom;
+//     const spaceAbove = buttonRect.top;
+
+//     // Сбрасываем стили
+//     menu.style.top = 'auto';
+//     menu.style.bottom = 'auto';
+//     // menu.style.right = '40px'; // можно задать в CSS
+
+//     // Решаем, куда открывать
+//     if (spaceBelow < menu.scrollHeight && spaceAbove > spaceBelow) {
+//       // Открываем вверх
+//       menu.style.bottom = `${window.innerHeight - buttonRect.top}px`;
+//       menu.style.transformOrigin = 'right bottom';
+//     } else {
+//       // Открываем вниз
+//       menu.style.top = `${buttonRect.top + window.scrollY}px`;
+//       menu.style.transformOrigin = 'right top';
+//     }
+
+//     // Открываем
+//     menu.classList.add(ACTIVE_CLASS);
+//     e.stopPropagation();
+//   });
+
+//   // Закрытие при клике вне
+//   document.addEventListener('click', function () {
+//     document.querySelectorAll('.dropdown-menu.' + ACTIVE_CLASS).forEach(menu => {
+//       menu.classList.remove(ACTIVE_CLASS);
+//     });
+//   });
+// }
+
 ;// CONCATENATED MODULE: ./src/js/app.js
 
 
@@ -1841,7 +2144,7 @@ menuOpen();
 // myFunctions.themeToggle();
 
 // показ шапки при скролле
-// myFunctions.headerScroll();
+headerScroll();
 
 //========================================================================================================================================================
 // Wathcer
