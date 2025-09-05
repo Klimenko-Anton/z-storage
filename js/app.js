@@ -807,6 +807,147 @@ function dataMediaQueries(array, dataSetValue) {
     }
   }
 }
+;// CONCATENATED MODULE: ./src/js/files/view-files.js
+const viewBtns = document.querySelectorAll("[data-view]");
+const filesBody = document.querySelector(".list-files__body");
+const currentView = localStorage.getItem("view") || "list";
+
+const templateFileViewList = (/* unused pure expression or super */ null && (`
+ <div class="list-files__item item-files" data-dropdown-parent>
+    <div class="item-files__row">
+      <div class="item-files__wrapper">
+        <div class="item-files__checkbox checkbox">
+          <label class="checkbox__item checkbox__item--second">
+            <input class="checkbox__input" type="checkbox">
+            <span class="checkbox__label"></span>
+          </label>
+        </div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__documents">
+          <div class="item-files__icon">
+            <img src="@img/icons/excel.svg" alt="" loading="lazy">
+          </div>
+          <div class="item-files__title">File name File name File name File name File name File name
+          </div>
+        </div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Order №</div>
+        <div class="item-files__value">122</div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Member</div>
+        <div class="item-files__members members">
+          <div class="members__items">
+            <div class="members__item">
+              <img src="@img/members/01.webp" alt="" loading="lazy">
+            </div>
+            <div class="members__item">
+              <img src="@img/members/02.webp" alt="" loading="lazy">
+            </div>
+            <div class="members__item">
+              <img src="@img/members/03.webp" alt="" loading="lazy">
+            </div>
+            <div class="members__item">
+              <img src="@img/members/04.webp" alt="" loading="lazy">
+            </div>
+          </div>
+          <div class="members__more">+3</div>
+        </div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Last Modified</div>
+        <div class="item-files__value item-files__value--second">25.05.2025</div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Size</div>
+        <div class="item-files__value item-files__value--second">100 MB</div>
+      </div>
+      <div class="item-files__actions">
+        <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-download"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-pen"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-star"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
+          data-dropdown></button>
+      </div>
+    </div>
+    <div class="item-files__dropdown dropdown-menu">
+      <ul class="dropdown-menu__list list-reset">
+        <li class="dropdown-menu__item">
+          <button type="button" class="dropdown-menu__btn btn-reset _icon-download">
+            Download
+          </button>
+        </li>
+        <li class="dropdown-menu__item">
+          <button type="button" class="dropdown-menu__btn btn-reset _icon-copy">
+            Copy
+          </button>
+        </li>
+        <li class="dropdown-menu__item">
+          <button type="button" class="dropdown-menu__btn btn-reset _icon-pen">
+            Rename
+          </button>
+        </li>
+        <li class="dropdown-menu__item">
+          <button type="button" class="dropdown-menu__btn btn-reset _icon-alert">
+            Details
+          </button>
+        </li>
+        <li class="dropdown-menu__item">
+          <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
+            Add to starred
+          </button>
+        </li>
+        <li class="dropdown-menu__item">
+          <button type="button" class="dropdown-menu__btn btn-reset _icon-trash">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+`));
+
+const templateFileViewGrid = (/* unused pure expression or super */ null && (`
+  <div class="list-files__item item-files-second">
+    <div class="item-files-second__top">
+      <div class="item-files-second__icon-file">
+        <img src="@img/icons/excel.svg" alt="" loading="lazy">
+      </div>
+      <div class="item-files-second__name">File name</div>
+      <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+    </div>
+    <div class="item-files-second__body">
+      <div class="item-files-second__image">
+        <img src="@img/files/01.webp" alt="" loading="lazy">
+      </div>
+    </div>
+  </div>
+`));
+
+
+if (filesBody) {
+  filesBody.dataset.temp = currentView;
+}
+
+if (viewBtns) {
+  viewBtns.forEach(btn => {
+    const view = btn.dataset.view;
+    if (currentView === view) {
+      btn.classList.add("_view-active");
+    }
+    btn.addEventListener("click", function () {
+      viewBtns.forEach(btn => btn.classList.remove("_view-active"));
+      btn.classList.add("_view-active")
+      if (filesBody) {
+        filesBody.dataset.temp = view;
+        localStorage.setItem("view", view);
+      }
+    })
+  })
+}
 ;// CONCATENATED MODULE: ./src/js/files/modules.js
 const modules_flsModules = {};
 ;// CONCATENATED MODULE: ./src/js/files/forms.js
@@ -1763,12 +1904,147 @@ modules_flsModules.select = new SelectConstructor({});
 
 
 
+;// CONCATENATED MODULE: ./src/js/libs/dynamic_adapt.js
+// Dynamic Adapt v.1
+// HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
+// e.x. data-da=".item,992,2"
+// Andrikanych Yevhen 2020
+// https://www.youtube.com/c/freelancerlifestyle
+
+class DynamicAdapt {
+  constructor(type) {
+    this.type = type
+  }
+  init() {
+    // массив объектов
+    this.оbjects = []
+    this.daClassname = '_dynamic_adapt_'
+    // массив DOM-елементов
+    this.nodes = [...document.querySelectorAll('[data-da]')]
+
+    // наполнение оbjects объектами
+    this.nodes.forEach((node) => {
+      const data = node.dataset.da.trim()
+      const dataArray = data.split(',')
+      const оbject = {}
+      оbject.element = node
+      оbject.parent = node.parentNode
+      оbject.destination = document.querySelector(`${dataArray[0].trim()}`)
+      оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : '767'
+      оbject.place = dataArray[2] ? dataArray[2].trim() : 'last'
+      оbject.index = this.indexInParent(оbject.parent, оbject.element)
+      this.оbjects.push(оbject)
+    })
+
+    this.arraySort(this.оbjects)
+
+    // массив уникальных медиа-запросов
+    this.mediaQueries = this.оbjects
+      .map(({ breakpoint }) => `(${this.type}-width: ${breakpoint}px),${breakpoint}`)
+      .filter((item, index, self) => self.indexOf(item) === index)
+
+    // навешивание слушателя на медиа-запрос
+    // и вызов обработчика при первом запуске
+    this.mediaQueries.forEach((media) => {
+      const mediaSplit = media.split(',')
+      const matchMedia = window.matchMedia(mediaSplit[0])
+      const mediaBreakpoint = mediaSplit[1]
+
+      //массив объектов с соответствующим брейкпоинтом
+      const оbjectsFilter = this.оbjects.filter(({ breakpoint }) => breakpoint === mediaBreakpoint)
+      matchMedia.addEventListener('change', () => {
+        this.mediaHandler(matchMedia, оbjectsFilter)
+      })
+      this.mediaHandler(matchMedia, оbjectsFilter)
+    })
+  }
+  // Основная функция
+  mediaHandler(matchMedia, оbjects) {
+    if (matchMedia.matches) {
+      оbjects.forEach((оbject) => {
+        // оbject.index = this.indexInParent(оbject.parent, оbject.element);
+        this.moveTo(оbject.place, оbject.element, оbject.destination)
+      })
+    } else {
+      оbjects.forEach(({ parent, element, index }) => {
+        if (element.classList.contains(this.daClassname)) {
+          this.moveBack(parent, element, index)
+        }
+      })
+    }
+  }
+  // Функция перемещения
+  moveTo(place, element, destination) {
+    element.classList.add(this.daClassname)
+    if (place === 'last' || place >= destination.children.length) {
+      destination.append(element)
+      return
+    }
+    if (place === 'first') {
+      destination.prepend(element)
+      return
+    }
+    destination.children[place].before(element)
+  }
+  // Функция возврата
+  moveBack(parent, element, index) {
+    element.classList.remove(this.daClassname)
+    if (parent.children[index] !== undefined) {
+      parent.children[index].before(element)
+    } else {
+      parent.append(element)
+    }
+  }
+  // Функция получения индекса внутри родительского элемента
+  indexInParent(parent, element) {
+    return [...parent.children].indexOf(element)
+  }
+  // Функция сортировки массива по breakpoint и place
+  // по возрастанию для this.type = min
+  // по убыванию для this.type = max
+  arraySort(arr) {
+    if (this.type === 'min') {
+      arr.sort((a, b) => {
+        if (a.breakpoint === b.breakpoint) {
+          if (a.place === b.place) {
+            return 0
+          }
+          if (a.place === 'first' || b.place === 'last') {
+            return -1
+          }
+          if (a.place === 'last' || b.place === 'first') {
+            return 1
+          }
+          return 0
+        }
+        return a.breakpoint - b.breakpoint
+      })
+    } else {
+      arr.sort((a, b) => {
+        if (a.breakpoint === b.breakpoint) {
+          if (a.place === b.place) {
+            return 0
+          }
+          if (a.place === 'first' || b.place === 'last') {
+            return 1
+          }
+          if (a.place === 'last' || b.place === 'first') {
+            return -1
+          }
+          return 0
+        }
+        return b.breakpoint - a.breakpoint
+      })
+      return
+    }
+  }
+}
+const da = new DynamicAdapt("max");
+da.init();
 ;// CONCATENATED MODULE: ./src/js/files/script.js
 window.addEventListener("DOMContentLoaded", function () {
   // windowObserver();
   document.addEventListener("click", documentActions);
-  console.log(window.innerWidth, window.innerHeight);
-
 });
 
 
@@ -1792,55 +2068,34 @@ function documentActions(e) {
   else if (!targetElement.closest(".dropdown-menu") && document.querySelector(".item-files._open-dropdown")) {
     document.querySelector(".item-files").classList.remove("_open-dropdown");
   }
+
+  if (targetElement.closest("[data-menu-sub]")) {
+    e.preventDefault();
+    const activeEl = document.querySelector("._show-submenu");
+    targetElement.closest(".menu__item").classList.toggle("_show-submenu");
+    if (activeEl && activeEl !== targetElement) {
+      activeEl.classList.remove("_show-submenu");
+    }
+  } else if (!targetElement.closest(".menu__sub-list") && document.querySelector(".menu__item._show-submenu")) {
+    document.querySelectorAll(".menu__item").forEach(item => item.classList.remove("_show-submenu"));
+  }
+
+  if (targetElement.closest(".notifications-block__icon")) {
+    const notificationsParentEl = targetElement.closest(".notifications-block");
+    notificationsParentEl.classList.toggle("notifications-block--active");
+  } else if (!targetElement.closest(".notifications-block") && document.querySelector(".notifications-block.notifications-block--active")) {
+    document.querySelector(".notifications-block").classList.remove("notifications-block--active");
+  }
+
+
+  if (targetElement.closest(".profile-user-mini__current")) {
+    const profileParent = targetElement.closest(".profile-user-mini");
+    profileParent.classList.toggle("_open-profile");
+  } else if (!targetElement.closest(".profile-user-mini__actions") && document.querySelector(".profile-user-mini._open-profile")) {
+    document.querySelector(".profile-user-mini").classList.remove("_open-profile");
+  }
 };
 
-
-// function filesCheckedUpdates() {
-
-//   const fileCheckbox = document.querySelector(".list-files__checkbox");
-//   const checkboxInput = fileCheckbox?.querySelector(".checkbox__input");
-
-//   if (fileCheckbox && checkboxInput) {
-//     const filesItems = document.querySelectorAll(".item-files");
-
-//     const updateMasterCheckbox = () => {
-//       const allChecked = Array.from(filesItems).every(item => {
-//         const checkbox = item.querySelector(".checkbox__input");
-//         return checkbox?.checked;
-//       });
-//       checkboxInput.checked = allChecked;
-//     };
-
-//     checkboxInput.addEventListener("change", function (e) {
-//       filesItems.forEach(item => {
-//         const checkboxItemFiles = item.querySelector(".checkbox__input");
-//         if (checkboxItemFiles) {
-//           checkboxItemFiles.checked = e.target.checked;
-//           if (e.target.checked) {
-//             item.classList.add("item-files--active");
-//           } else {
-//             item.classList.remove("item-files--active");
-//           }
-//         }
-//       });
-//     });
-
-//     filesItems.forEach(item => {
-//       const checkboxItemFiles = item.querySelector(".checkbox__input");
-//       if (checkboxItemFiles) {
-//         checkboxItemFiles.addEventListener("change", function () {
-//           updateMasterCheckbox();
-
-//           if (this.checked) {
-//             item.classList.add("item-files--active");
-//           } else {
-//             item.classList.remove("item-files--active");
-//           }
-//         });
-//       }
-//     });
-//   }
-// }
 
 
 function filesCheckedUpdates() {
@@ -1848,7 +2103,6 @@ function filesCheckedUpdates() {
   const checkboxInput = fileCheckbox?.querySelector(".checkbox__input");
   const filesItems = document.querySelectorAll(".item-files");
 
-  // Функция для обновления главного чекбокса (если он существует)
   const updateMasterCheckbox = () => {
     if (!checkboxInput) return;
 
@@ -1859,17 +2113,15 @@ function filesCheckedUpdates() {
     checkboxInput.checked = allChecked;
   };
 
-  // Обработчик для отдельных чекбоксов
   const handleItemCheckboxChange = function (checkbox, item) {
     if (checkbox.checked) {
       item.classList.add("item-files--active");
     } else {
       item.classList.remove("item-files--active");
     }
-    updateMasterCheckbox(); // Обновляем главный чекбокс, если он есть
+    updateMasterCheckbox();
   };
 
-  // Инициализация обработчиков для каждого отдельного чекбокса
   filesItems.forEach(item => {
     const checkboxItemFiles = item.querySelector(".checkbox__input");
     if (checkboxItemFiles) {
@@ -1877,14 +2129,12 @@ function filesCheckedUpdates() {
         handleItemCheckboxChange(this, item);
       });
 
-      // Опционально: установить состояние класса при загрузке (если чекбокс уже был отмечен)
       if (checkboxItemFiles.checked) {
         item.classList.add("item-files--active");
       }
     }
   });
 
-  // Логика главного чекбокса (только если он существует)
   if (fileCheckbox && checkboxInput) {
     checkboxInput.addEventListener("change", function (e) {
       filesItems.forEach(item => {
@@ -1898,240 +2148,12 @@ function filesCheckedUpdates() {
           }
         }
       });
-      updateMasterCheckbox(); // Убедимся, что состояние актуально
+      updateMasterCheckbox();
     });
   }
 }
-
 
 filesCheckedUpdates();
-
-/*
-function initDropdown() {
-  const DROPDOWN_TRIGGER = '[data-dropdown]';
-  const DROPDOWN_MENU = '.dropdown-menu';
-  const ACTIVE_CLASS = '_open-dropdown';
-
-  function closeAllDropdowns(except) {
-    document.querySelectorAll(`${DROPDOWN_MENU}.${ACTIVE_CLASS}`).forEach(menu => {
-      if (menu !== except) {
-        menu.classList.remove(ACTIVE_CLASS);
-      }
-    });
-  }
-
-  function getAvailableSpace(buttonRect) {
-    const spaceBelow = window.innerHeight - buttonRect.bottom;
-    const spaceAbove = buttonRect.top;
-    return { spaceBelow, spaceAbove };
-  }
-
-  function positionDropdown(menu, buttonRect, menuHeight) {
-    const { spaceBelow, spaceAbove } = getAvailableSpace(buttonRect);
-
-    // Решаем, куда открывать
-    const shouldOpenUp = spaceBelow < menuHeight && spaceAbove > spaceBelow;
-
-    menu.style.top = 'auto';
-    menu.style.bottom = 'auto';
-    // menu.style.right = '40px'; // или toRem(40), но лучше в CSS
-
-    if (shouldOpenUp) {
-      menu.style.bottom = `${window.innerHeight - buttonRect.top}px`;
-      menu.style.transformOrigin = 'right bottom';
-    } else {
-      menu.style.top = `${buttonRect.top + window.scrollY}px`;
-      menu.style.transformOrigin = 'right top';
-    }
-  }
-
-  // Открытие/закрытие по клику
-  document.addEventListener('click', function (e) {
-    const trigger = e.target.closest(DROPDOWN_TRIGGER);
-
-
-    if (trigger) {
-      const item = trigger.closest("[data-dropdown-parent]");
-
-      const menu = item?.querySelector(DROPDOWN_MENU);
-      if (!menu) return;
-
-      const isOpen = item.classList.contains(ACTIVE_CLASS);
-
-
-      // Закрываем все, кроме этого
-      closeAllDropdowns(item);
-
-
-      if (!isOpen) {
-        // Перед открытием — позиционируем
-        const buttonRect = trigger.getBoundingClientRect();
-        const menuHeight = menu.scrollHeight;
-
-        positionDropdown(menu, buttonRect, menuHeight);
-        // menu.classList.add(ACTIVE_CLASS);
-        item.classList.toggle(ACTIVE_CLASS);
-      }
-
-      e.stopPropagation();
-    }
-  });
-
-  // Закрытие при клике вне
-  document.addEventListener('click', function () {
-    closeAllDropdowns();
-  });
-
-  // Опционально: закрытие при скролле
-  window.addEventListener('scroll', closeAllDropdowns, true);
-}
-*/
-
-// function initDropdown() {
-//   const DROPDOWN_TRIGGER = '[data-dropdown]';
-//   const DROPDOWN_PARENT = '[data-dropdown-parent]';
-//   const ACTIVE_CLASS = '_open-dropdown';
-
-//   // Закрыть все открытые dropdown'ы, кроме указанного
-//   function closeAllDropdowns(exceptParent) {
-//     document.querySelectorAll(`${DROPDOWN_PARENT}.${ACTIVE_CLASS}`).forEach(parent => {
-//       if (parent !== exceptParent) {
-//         parent.classList.remove(ACTIVE_CLASS);
-//       }
-//     });
-//   }
-
-//   function getAvailableSpace(buttonRect) {
-//     const spaceBelow = window.innerHeight - buttonRect.bottom;
-//     const spaceAbove = buttonRect.top;
-//     return { spaceBelow, spaceAbove };
-//   }
-
-//   function positionDropdown(menu, buttonRect, menuHeight) {
-//     const { spaceBelow, spaceAbove } = getAvailableSpace(buttonRect);
-//     const shouldOpenUp = spaceBelow < menuHeight && spaceAbove > spaceBelow;
-
-//     menu.style.top = 'auto';
-//     menu.style.bottom = 'auto';
-
-//     if (shouldOpenUp) {
-//       menu.style.bottom = `${window.innerHeight - buttonRect.top}px`;
-//       menu.style.transformOrigin = 'right bottom';
-//     } else {
-//       menu.style.top = `${buttonRect.top + window.scrollY}px`;
-//       menu.style.transformOrigin = 'right top';
-//     }
-//   }
-
-//   // Клик по документу
-//   document.addEventListener('click', function (e) {
-//     const trigger = e.target.closest(DROPDOWN_TRIGGER);
-//     console.log(trigger);
-
-
-//     if (trigger) {
-//       const parent = trigger.closest(DROPDOWN_PARENT);
-//       const menu = parent?.querySelector('.dropdown-menu');
-
-//       console.log(parent);
-
-
-//       if (!parent || !menu) return;
-
-//       const isOpen = parent.classList.contains(ACTIVE_CLASS);
-
-//       // Закрываем все, кроме этого
-//       closeAllDropdowns(parent);
-
-//       if (!isOpen) {
-//         // Позиционируем перед открытием
-//         const buttonRect = trigger.getBoundingClientRect();
-//         const menuHeight = menu.scrollHeight;
-//         positionDropdown(menu, buttonRect, menuHeight);
-
-//         // Открываем
-//         parent.classList.toggle(ACTIVE_CLASS);
-//       }
-
-//       e.stopPropagation();
-//     }
-//   });
-
-//   // Закрытие при клике вне
-//   document.addEventListener('click', function () {
-//     closeAllDropdowns(); // закрываем все
-//   });
-
-
-//   // Закрытие при скролле
-//   window.addEventListener('scroll', function () {
-//     closeAllDropdowns();
-//   }, true);
-// }
-
-
-
-
-// function initDropdown() {
-//   const ACTIVE_CLASS = '_open-dropdown';
-
-//   document.addEventListener('click', function (e) {
-//     const trigger = e.target.closest('[data-dropdown]');
-//     if (!trigger) return;
-
-//     // Находим родителя с data-dropdown-parent
-//     const parent = trigger.closest('[data-dropdown-parent]');
-//     if (!parent) return;
-
-//     const menu = parent.querySelector('.dropdown-menu');
-//     if (!menu) return;
-
-//     // Если меню уже открыто — закрываем
-//     if (menu.classList.contains(ACTIVE_CLASS)) {
-//       menu.classList.remove(ACTIVE_CLASS);
-//       return;
-//     }
-
-//     // Закрываем все другие меню
-//     document.querySelectorAll('.dropdown-menu.' + ACTIVE_CLASS).forEach(m => {
-//       m.classList.remove(ACTIVE_CLASS);
-//     });
-
-//     // Позиционируем: вверх или вниз
-//     const buttonRect = trigger.getBoundingClientRect();
-//     const menuRect = menu.getBoundingClientRect();
-//     const spaceBelow = window.innerHeight - buttonRect.bottom;
-//     const spaceAbove = buttonRect.top;
-
-//     // Сбрасываем стили
-//     menu.style.top = 'auto';
-//     menu.style.bottom = 'auto';
-//     // menu.style.right = '40px'; // можно задать в CSS
-
-//     // Решаем, куда открывать
-//     if (spaceBelow < menu.scrollHeight && spaceAbove > spaceBelow) {
-//       // Открываем вверх
-//       menu.style.bottom = `${window.innerHeight - buttonRect.top}px`;
-//       menu.style.transformOrigin = 'right bottom';
-//     } else {
-//       // Открываем вниз
-//       menu.style.top = `${buttonRect.top + window.scrollY}px`;
-//       menu.style.transformOrigin = 'right top';
-//     }
-
-//     // Открываем
-//     menu.classList.add(ACTIVE_CLASS);
-//     e.stopPropagation();
-//   });
-
-//   // Закрытие при клике вне
-//   document.addEventListener('click', function () {
-//     document.querySelectorAll('.dropdown-menu.' + ACTIVE_CLASS).forEach(menu => {
-//       menu.classList.remove(ACTIVE_CLASS);
-//     });
-//   });
-// }
-
 ;// CONCATENATED MODULE: ./src/js/app.js
 
 
@@ -2145,6 +2167,9 @@ menuOpen();
 
 // показ шапки при скролле
 headerScroll();
+
+//========================================================================================================================================================
+
 
 //========================================================================================================================================================
 // Wathcer
@@ -2204,7 +2229,7 @@ headerScroll();
 // import "./files/swiper.js";
 
 // Динамический адаптив
-// import "./libs/dynamic_adapt.js";
+
 
 
 /******/ })()

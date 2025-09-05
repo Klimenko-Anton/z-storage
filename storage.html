@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20250903174804">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250905200027">
   <link rel="icon" type="image/x-icon" href="img/favicons/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
   <title>Storage</title>
@@ -17,9 +17,11 @@
   <div class="header__wrapper">
     <div class="header__container">
       <div class="header__body">
-        <a class="header__logo logo" href="#">
-          <img src="img/logo.svg" alt="Logo">
-        </a>
+        <div class="header__logo">
+          <a class="logo" href="#">
+            <img src="img/logo.svg" alt="Logo">
+          </a>
+        </div>
         <div class="header__menu menu">
           <nav class="menu__body">
             <ul class="menu__list list-reset">
@@ -29,49 +31,184 @@
               <li class="menu__item">
                 <a class="menu__link _icon-chevron-down" href="#" data-menu-sub>Products</a>
                 <div class="menu__sub-wrapper">
-                  <div class="menu__sub-inner">
-                    <ul class="menu__sub-list list-reset">
-                      <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 1</a></li>
-                      <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 2</a></li>
-                      <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 3</a></li>
-                    </ul>
-                  </div>
+                  <ul class="menu__sub-list list-reset">
+                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 1</a></li>
+                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 2</a></li>
+                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 3</a></li>
+                  </ul>
                 </div>
               </li>
               <li class="menu__item">
                 <a class="menu__link" href="#">Tariffs</a>
               </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#">Wallet</a>
-              </li>
             </ul>
           </nav>
+          <ul class="menu__list-mobile list-reset">
+            <li class="menu__list-mobile-item">
+              <a class="menu__list-mobile-action" href="#">
+                <span class="menu__list-mobile-icon _icon-handshake"></span>
+                <span class="menu__list-mobile-value">Freelance</span>
+              </a>
+            </li>
+            <li class="menu__list-mobile-item">
+              <button class="menu__list-mobile-action btn-reset" type="button" data-popup="#mob-aside">
+                <span class="menu__list-mobile-icon _icon-products"></span>
+                <span class="menu__list-mobile-value">Products</span>
+              </button>
+            </li>
+            <li class="menu__list-mobile-item">
+              <a class="menu__list-mobile-action" href="#">
+                <span class="menu__list-mobile-icon _icon-coins"></span>
+                <span class="menu__list-mobile-value">Tariffs</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="header__actions actions-header">
-          <div class="actions-header__buttons">
-            <button type="button" class="actions-header__button btn-round btn-round--50 btn-reset _icon-search">
-              <span class="visually-hidden">Search</span>
-            </button>
-            <div class="actions-header__notifications notifications-block">
+          <div class="actions-header__wrapper">
+            <div class="actions-header__col">
+              <div class="actions-header__profile-user profile-user">
+                <div class="profile-user__preview">
+                  <div class="profile-user__avatar"></div>
+                </div>
+                <div class="profile-user__name">Имя пользователя</div>
+              </div>
+              <div class="actions-header__balance-block balance-block">
+                <div class="balance-block__label">
+                  Balance: <span>0$</span>
+                </div>
+                <button type="button" class="balance-block__btn btn-reset _icon-plus">
+                  <span class="visually-hidden">Top up your balance</span>
+                </button>
+              </div>
+            </div>
+            <ul class="actions-header__list list-reset">
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-settings btn-reset">Settings</button></li>
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-mail btn-reset">Messages</button></li>
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-coins btn-reset">Tariffs</button></li>
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-out btn-reset">Log out</button></li>
+            </ul>
+          </div>
+          <div class="actions-header__inner">
+            <!-- клсс notifications-block--empty скрывает notifications-block__alert -->
+
+            <div class="actions-header__notifications notifications-block"
+              data-da=".actions-header__wrapper, 767.98, last">
               <button type="button"
-                class="actions-header__button btn-round btn-round--50 notifications-block__icon btn-reset _icon-notification">
+                class="notifications-block__icon btn-round btn-round--50 btn-reset _icon-notification">
                 <span class="visually-hidden">Notifications</span>
-                <div class="notifications-block__alert"></div>
+                <span class="notifications-block__alert">
+                  <!-- span внутри покрасит в синий цвет -->
+                </span>
               </button>
               <div class="notifications-block__body">
-                Тут контент уведомлений
+                <div class="notifications-block__wrapper">
+                  <div class="notifications-block__header">
+                    <div class="notifications-block__inner">
+                      <h3 class="notifications-block__title">Notifications</h3>
+                      <div class="notifications-block__text">You have 2 new notifications</div>
+                    </div>
+                    <button type="button" class="notifications-block__btn btn-reset">Mark all as read</button>
+                  </div>
+                  <ul class="notifications-block__list list-reset">
+                    <li class="notifications-block__item item-notifications item-notifications--unread">
+                      <div class="item-notifications__preview"></div>
+                      <div class="item-notifications__body">
+                        <h3 class="item-notifications__title">New message from Jane</h3>
+                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+                          ipsum dolor
+                          sit amet consectetuer</div>
+                      </div>
+                      <div class="item-notifications__time">2h</div>
+                    </li>
+                    <li class="notifications-block__item item-notifications item-notifications--unread">
+                      <div class="item-notifications__preview"></div>
+                      <div class="item-notifications__body">
+                        <h3 class="item-notifications__title">Upcoming event</h3>
+                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer</div>
+                      </div>
+                      <div class="item-notifications__time">1d</div>
+                    </li>
+                    <li class="notifications-block__item item-notifications">
+                      <div class="item-notifications__preview"></div>
+                      <div class="item-notifications__body">
+                        <h3 class="item-notifications__title">New message from Jane</h3>
+                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+                          ipsum dolor
+                          sit amet consectetuer</div>
+                      </div>
+                      <div class="item-notifications__time">2h</div>
+                    </li>
+                    <li class="notifications-block__item item-notifications">
+                      <div class="item-notifications__preview"></div>
+                      <div class="item-notifications__body">
+                        <h3 class="item-notifications__title">New message from Jane</h3>
+                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+                          ipsum dolor
+                          sit amet consectetuer</div>
+                      </div>
+                      <div class="item-notifications__time">2h</div>
+                    </li>
+                    <li class="notifications-block__item item-notifications">
+                      <div class="item-notifications__preview"></div>
+                      <div class="item-notifications__body">
+                        <h3 class="item-notifications__title">New message from Jane</h3>
+                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+                          ipsum dolor
+                          sit amet consectetuer</div>
+                      </div>
+                      <div class="item-notifications__time">2h</div>
+                    </li>
+                    <li class="notifications-block__item item-notifications">
+                      <div class="item-notifications__preview"></div>
+                      <div class="item-notifications__body">
+                        <h3 class="item-notifications__title">New message from Jane</h3>
+                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+                          ipsum dolor
+                          sit amet consectetuer</div>
+                      </div>
+                      <div class="item-notifications__time">2h</div>
+                    </li>
+                    <li class="notifications-block__item item-notifications">
+                      <div class="item-notifications__preview"></div>
+                      <div class="item-notifications__body">
+                        <h3 class="item-notifications__title">New message from Jane</h3>
+                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+                          ipsum dolor
+                          sit amet consectetuer</div>
+                      </div>
+                      <div class="item-notifications__time">2h</div>
+                    </li>
+                  </ul>
+                  <button type="button" class="notifications-block__btn-view btn btn--grey btn-reset">View
+                    all</button>
+                </div>
+              </div>
+            </div>
+            <div class="actions-header__profile-user-mini profile-user-mini">
+              <button class="profile-user-mini__current btn-reset" type="button">
+                <span class="profile-user-mini__avatar"></span>
+                <span class="profile-user-mini__name">User1111</span>
+                <span class="profile-user-mini__icon _icon-chevron-down"></span>
+              </button>
+              <div class="profile-user-mini__wrapper">
+                <ul class="profile-user-mini__actions list-reset">
+                  <li class="profile-user-mini__actions-item">
+                    <button type="button" class="profile-user-mini__action btn-reset _icon-settings">Settings</button>
+                  </li>
+                  <li class="profile-user-mini__actions-item">
+                    <button type="button" class="profile-user-mini__action btn-reset _icon-out">Log out</button>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="actions-header__profile-list profile-list">
-            <button class="profile-list__current btn-reset" type="button">
-              <span class="profile-list__avatar"></span>
-              <span class="profile-list__name">User1111</span>
-              <span class="profile-list__icon _icon-chevron-down"></span>
-            </button>
-          </div>
         </div>
-        <button type="button" class="icon-menu"><span></span></button>
+        <button type="button" class="header__menu-btn icon-menu btn-reset"><span></span></button>
       </div>
     </div>
   </div>
@@ -345,45 +482,30 @@
               <div class="content__list-files list-files">
                 <div class="list-files__actions actions-list-files">
                   <div class="actions-list-files__count-select">
-                    <button type="button" class="actions-list-files__remove-select btn-reset">
+                    <button type="button" class="actions-list-files__remove-select _icon-plus btn-reset">
                       <span class="visually-hidden">Clear selected items</span>
-                      <svg class="icon icon--stroke">
-                        <use href="img/icons/icons.svg#plus"></use>
-                      </svg>
                     </button>
                     2 selected
                   </div>
                   <div class="actions-list-files__buttons">
-                    <button type="button" class="actions-list-files__btn-action btn-reset">
+                    <button type="button" class="actions-list-files__btn-action _icon-plus-user btn-reset">
                       <span class="visually-hidden">Add new file</span>
-                      <svg class="icon icon--stroke">
-                        <use href="img/icons/icons.svg#add-user"></use>
-                      </svg>
                     </button>
-                    <button type="button" class="actions-list-files__btn-action btn-reset">
+                    <button type="button" class="actions-list-files__btn-action _icon-download btn-reset">
                       <span class="visually-hidden">Download files</span>
-                      <svg class="icon icon--stroke">
-                        <use href="img/icons/icons.svg#download"></use>
-                      </svg>
                     </button>
-                    <button type="button" class="actions-list-files__btn-action btn-reset">
+                    <button type="button" class="actions-list-files__btn-action _icon-file-move btn-reset">
                       <span class="visually-hidden">Move files</span>
-                      <svg class="icon icon--stroke">
-                        <use href="img/icons/icons.svg#folder-next"></use>
-                      </svg>
                     </button>
-                    <button type="button" class="actions-list-files__btn-action btn-reset">
+                    <button type="button" class="actions-list-files__btn-action _icon-trash btn-reset">
                       <span class="visually-hidden">Delete files</span>
-                      <svg class="icon icon--stroke">
-                        <use href="img/icons/icons.svg#trash"></use>
-                      </svg>
                     </button>
                   </div>
                 </div>
                 <div class="list-files__body">
                   <div class="list-files__item item-files" data-dropdown-parent>
                     <div class="item-files__row">
-                      <div class="item-files__label">
+                      <div class="item-files__wrapper">
                         <div class="item-files__checkbox checkbox">
                           <label class="checkbox__item checkbox__item--second">
                             <input class="checkbox__input" type="checkbox">
@@ -391,20 +513,20 @@
                           </label>
                         </div>
                       </div>
-                      <div class="item-files__label">
+                      <div class="item-files__wrapper">
                         <div class="item-files__documents">
                           <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
+                            <img src="img/icons/excel.svg" alt="" loading="lazy">
                           </div>
                           <div class="item-files__title">File name File name File name File name File name File name
                           </div>
                         </div>
                       </div>
-                      <div class="item-files__label">
+                      <div class="item-files__wrapper">
                         <div class="item-files__text">Order №</div>
                         <div class="item-files__value">122</div>
                       </div>
-                      <div class="item-files__label">
+                      <div class="item-files__wrapper">
                         <div class="item-files__text">Member</div>
                         <div class="item-files__members members">
                           <div class="members__items">
@@ -424,1661 +546,52 @@
                           <div class="members__more">+3</div>
                         </div>
                       </div>
-                      <div class="item-files__label">
+                      <div class="item-files__wrapper">
                         <div class="item-files__text">Last Modified</div>
                         <div class="item-files__value item-files__value--second">25.05.2025</div>
                       </div>
-                      <div class="item-files__label">
+                      <div class="item-files__wrapper">
                         <div class="item-files__text">Size</div>
                         <div class="item-files__value item-files__value--second">100 MB</div>
                       </div>
                       <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-download"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-pen"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-star"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
+                          data-dropdown></button>
                       </div>
                     </div>
                     <div class="item-files__dropdown dropdown-menu">
                       <ul class="dropdown-menu__list list-reset">
                         <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
+                          <button type="button" class="dropdown-menu__btn btn-reset _icon-download">
                             Download
                           </button>
                         </li>
                         <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
+                          <button type="button" class="dropdown-menu__btn btn-reset _icon-copy">
                             Copy
                           </button>
                         </li>
                         <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
+                          <button type="button" class="dropdown-menu__btn btn-reset _icon-pen">
                             Rename
                           </button>
                         </li>
                         <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
+                          <button type="button" class="dropdown-menu__btn btn-reset _icon-alert">
                             Details
                           </button>
                         </li>
                         <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
+                          <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
                             Add to starred
                           </button>
                         </li>
                         <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/word.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
-                            Delete
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="list-files__item item-files" data-dropdown-parent>
-                    <div class="item-files__row">
-                      <div class="item-files__label">
-                        <div class="item-files__checkbox checkbox">
-                          <label class="checkbox__item checkbox__item--second">
-                            <input class="checkbox__input" type="checkbox">
-                            <span class="checkbox__label"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__documents">
-                          <div class="item-files__icon">
-                            <img src="img/main-icons/excel.svg" alt="" loading="lazy">
-                          </div>
-                          <div class="item-files__title">File name File name File name</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Order №</div>
-                        <div class="item-files__value">122</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Member</div>
-                        <div class="item-files__members members">
-                          <div class="members__items">
-                            <div class="members__item">
-                              <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                            </div>
-                            <div class="members__item">
-                              <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                            </div>
-                          </div>
-                          <div class="members__more">+3</div>
-                        </div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Last Modified</div>
-                        <div class="item-files__value item-files__value--second">25.05.2025</div>
-                      </div>
-                      <div class="item-files__label">
-                        <div class="item-files__text">Size</div>
-                        <div class="item-files__value item-files__value--second">100 MB</div>
-                      </div>
-                      <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#add-user"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#download"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#pen"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset">
-                          <svg class="icon icon--stroke">
-                            <use href="img/icons/icons.svg#star"></use>
-                          </svg>
-                        </button>
-                        <button type="button" class="item-files__btn-action btn-reset" data-dropdown>
-                          <svg class="icon">
-                            <use href="img/icons/icons.svg#dotts-vert"></use>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="item-files__dropdown dropdown-menu">
-                      <ul class="dropdown-menu__list list-reset">
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#download"></use>
-                            </svg>
-                            Download
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#copy"></use>
-                            </svg>
-                            Copy
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#pen"></use>
-                            </svg>
-                            Rename
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#alert"></use>
-                            </svg>
-                            Details
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#star"></use>
-                            </svg>
-                            Add to starred
-                          </button>
-                        </li>
-                        <li class="dropdown-menu__item">
-                          <button type="button" class="dropdown-menu__btn btn-reset">
-                            <svg class="icon icon--stroke dropdown-menu__icon">
-                              <use href="img/icons/icons.svg#trash"></use>
-                            </svg>
+                          <button type="button" class="dropdown-menu__btn btn-reset _icon-trash">
                             Delete
                           </button>
                         </li>
@@ -2125,7 +638,7 @@
     </main>
   </div>
 
-  <script src="js/app.min.js?_v=20250903174804"></script>
+  <script src="js/app.min.js?_v=20250905200027"></script>
 </body>
 
 </html>
