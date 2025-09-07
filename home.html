@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20250905200027">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250907182607">
   <link rel="icon" type="image/x-icon" href="img/favicons/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
   <title>Главная</title>
@@ -33,9 +33,15 @@
                 <a class="menu__link _icon-chevron-down" href="#" data-menu-sub>Products</a>
                 <div class="menu__sub-wrapper">
                   <ul class="menu__sub-list list-reset">
-                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 1</a></li>
-                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 2</a></li>
-                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 3</a></li>
+                    <li class="menu__sub-item">
+                      <a class="menu__sub-link _icon-products" href="#">Products 1</a>
+                    </li>
+                    <li class="menu__sub-item">
+                      <a class="menu__sub-link _icon-products" href="#">Products 2</a>
+                    </li>
+                    <li class="menu__sub-item">
+                      <a class="menu__sub-link _icon-products" href="#">Products 3</a>
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -52,7 +58,7 @@
               </a>
             </li>
             <li class="menu__list-mobile-item">
-              <button class="menu__list-mobile-action btn-reset" type="button" data-popup="#mob-aside">
+              <button class="menu__list-mobile-action btn-reset" type="button" data-menu-products-list>
                 <span class="menu__list-mobile-icon _icon-products"></span>
                 <span class="menu__list-mobile-value">Products</span>
               </button>
@@ -67,7 +73,7 @@
         </div>
         <div class="header__actions actions-header">
           <div class="actions-header__wrapper">
-            <div class="actions-header__col">
+            <div class="actions-header__main">
               <div class="actions-header__profile-user profile-user">
                 <div class="profile-user__preview">
                   <div class="profile-user__avatar"></div>
@@ -95,101 +101,13 @@
             </ul>
           </div>
           <div class="actions-header__inner">
-            <!-- клсс notifications-block--empty скрывает notifications-block__alert -->
-
-            <div class="actions-header__notifications notifications-block"
+            <button type="button"
+              class="actions-header__notifications-icon notifications-icon btn-round btn-round--50 btn-round--small btn-reset _icon-notification"
               data-da=".actions-header__wrapper, 767.98, last">
-              <button type="button"
-                class="notifications-block__icon btn-round btn-round--50 btn-reset _icon-notification">
-                <span class="visually-hidden">Notifications</span>
-                <span class="notifications-block__alert">
-                  <!-- span внутри покрасит в синий цвет -->
-                </span>
-              </button>
-              <div class="notifications-block__body">
-                <div class="notifications-block__wrapper">
-                  <div class="notifications-block__header">
-                    <div class="notifications-block__inner">
-                      <h3 class="notifications-block__title">Notifications</h3>
-                      <div class="notifications-block__text">You have 2 new notifications</div>
-                    </div>
-                    <button type="button" class="notifications-block__btn btn-reset">Mark all as read</button>
-                  </div>
-                  <ul class="notifications-block__list list-reset">
-                    <li class="notifications-block__item item-notifications item-notifications--unread">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications item-notifications--unread">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">Upcoming event</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">1d</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                  </ul>
-                  <button type="button" class="notifications-block__btn-view btn btn--grey btn-reset">View
-                    all</button>
-                </div>
-              </div>
-            </div>
+              <!-- класс notifications-icon--empty скрывает notifications-block__alert -->
+              <span class="visually-hidden">Notifications</span>
+              <span class="notifications-icon__alert"></span>
+            </button>
             <div class="actions-header__profile-user-mini profile-user-mini">
               <button class="profile-user-mini__current btn-reset" type="button">
                 <span class="profile-user-mini__avatar"></span>
@@ -216,8 +134,8 @@
 </header>
 
     <main class="page">
-      <div class="page__container">
-        <aside class="page__aside aside">
+      <div class="page__container page__container--col">
+        <!-- <aside class="page__aside aside">
           <button type="button" class="aside__open-btn icon-menu icon-menu--close btn-reset"
             aria-label="Close menu"></button>
           <div class="aside__body">
@@ -336,8 +254,8 @@
                 </div>
                 <div class="promo__body">
                   <div class="promo__wrapper">
-                    <div class="promo__title">75% of storage is used</div>
-                    <div class="promo__text">75 MB / 100 MB is used</div>
+                    <div class="promo__title">75% of storage is used</div>
+                    <div class="promo__text">75 MB / 100 MB is used</div>
                   </div>
                   <button type="button" class="promo__btn btn btn--grey btn--small btn-reset _icon-wallet">
                     Upgrade now
@@ -346,7 +264,170 @@
               </div>
             </div>
           </div>
+        </aside> -->
+
+        <aside class="page__aside aside aside--main">
+          <div class="aside__clouds main-aside">
+            <button type="button" class="main-aside__aside-toggler btn-reset _icon-chevron-down"
+              data-aside-open></button>
+            <div class="main-aside__profile-user profile-user">
+              <div class="profile-user__preview">
+                <button type="button" class="profile-user__settings-btn btn-reset _icon-settings">
+                  <span class="visually-hidden">Settings</span>
+                </button>
+                <div class="profile-user__avatar profile-user__avatar--large"></div>
+              </div>
+              <div class="profile-user__name profile-user__name--large">Имя пользователя</div>
+              <div class="profile-user__status">Статус какой-то</div>
+            </div>
+            <div class="main-aside__content">
+              <div class="main-aside__body">
+                <div class="main-aside__column column-aside">
+                  <div class="column-aside__top">
+                    <div class="column-aside__label">Profile</div>
+                    <button type="button" class="column-aside__btn-action btn-reset _icon-settings">
+                      <span class="visually-hidden">Add or remove categories</span>
+                    </button>
+                  </div>
+                  <ul class="column-aside__list list-reset">
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-mail"></span>
+                        <span class="column-aside__name">Messages</span>
+                      </button>
+                    </li>
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-mail"></span>
+                        <span class="column-aside__name">Portfolio</span>
+                      </button>
+                    </li>
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-document"></span>
+                        <span class="column-aside__name">Projects</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="main-aside__column column-aside">
+                  <div class="column-aside__top">
+                    <div class="column-aside__label">Tools</div>
+                    <button type="button" class="column-aside__btn-action btn-reset _icon-settings">
+                      <span class="visually-hidden">Add or remove categories</span>
+                    </button>
+                  </div>
+                  <ul class="column-aside__list list-reset">
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-kanban"></span>
+                        <span class="column-aside__name">Kanban</span>
+                      </button>
+                    </li>
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-board"></span>
+                        <span class="column-aside__name">Boards</span>
+                      </button>
+                    </li>
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-calendar"></span>
+                        <span class="column-aside__name">Calendar</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="main-aside__column column-aside">
+                  <div class="column-aside__top">
+                    <div class="column-aside__label">Teams</div>
+                    <button type="button" class="column-aside__btn-action btn-reset _icon-settings">
+                      <span class="visually-hidden">Add or remove categories</span>
+                    </button>
+                  </div>
+                  <ul class="column-aside__list list-reset">
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-coins"></span>
+                        <span class="column-aside__name">Tariffs</span>
+                      </button>
+                    </li>
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-users"></span>
+                        <span class="column-aside__name">My teams</span>
+                      </button>
+                    </li>
+                    <li class="column-aside__item">
+                      <div class="column-aside__checkbox checkbox">
+                        <label class="checkbox__item checkbox__item--second">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__label"></span>
+                        </label>
+                      </div>
+                      <button type="button" class="column-aside__btn btn-reset">
+                        <span class="column-aside__icon _icon-cloud-storage"></span>
+                        <span class="column-aside__name">Storage</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" class="main-aside__btn-out btn btn--grey btn--large btn-reset _icon-out">
+                <span>Log out</span>
+              </button>
+            </div>
+          </div>
         </aside>
+
         <div class="page__content content content--cloud">
           <div class="content__header">
             <button type="button" class="content__btn btn btn--large btn--accent btn-reset _icon-plus">
@@ -357,8 +438,6 @@
               <input autocomplete="off" type="search" name="main-search" placeholder="Search"
                 class="main-search__input input">
             </form>
-            <button type="button" class="content__open-menu icon-menu btn-reset"
-              aria-label="Open menu"><span></span></button>
           </div>
           <div class="content__body">
             <div class="content__items">
@@ -473,8 +552,26 @@
                       data-view="list"></button>
                   </div>
                 </div>
+                <div class="list-files__actions actions-list-files">
+                  <div class="actions-list-files__count-select">
+                    <button type="button" class="actions-list-files__remove-select _icon-plus btn-reset">
+                      <span class="visually-hidden">Clear selected items</span>
+                    </button>
+                    2 selected
+                  </div>
+                  <div class="actions-list-files__buttons">
+                    <button type="button" class="actions-list-files__btn-action _icon-plus-user btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                    <button type="button" class="actions-list-files__btn-action _icon-download btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                    <button type="button" class="actions-list-files__btn-action _icon-file-move btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                    <button type="button" class="actions-list-files__btn-action _icon-trash btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                  </div>
+                </div>
                 <div class="list-files__body">
-                  <div class="list-files__item item-files" data-dropdown-parent>
+                  <!-- <div class="list-files__item item-files" data-dropdown-parent>
                     <div class="item-files__row">
                       <div class="item-files__wrapper">
                         <div class="item-files__checkbox checkbox">
@@ -526,10 +623,14 @@
                         <div class="item-files__value item-files__value--second">100 MB</div>
                       </div>
                       <div class="item-files__actions">
-                        <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"></button>
-                        <button type="button" class="item-files__btn-action btn-reset _icon-download"></button>
-                        <button type="button" class="item-files__btn-action btn-reset _icon-pen"></button>
-                        <button type="button" class="item-files__btn-action btn-reset _icon-star"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"
+                          data-tippy-content="Скачать файл"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-download"
+                          data-tippy-content="Скачать файл"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-pen"
+                          data-tippy-content="Скачать файл"></button>
+                        <button type="button" class="item-files__btn-action btn-reset _icon-star"
+                          data-tippy-content="Скачать файл"></button>
                         <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
                           data-dropdown></button>
                       </div>
@@ -558,7 +659,7 @@
                         </li>
                         <li class="dropdown-menu__item">
                           <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
-                            Add to starred
+                            Add to starred
                           </button>
                         </li>
                         <li class="dropdown-menu__item">
@@ -568,7 +669,7 @@
                         </li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- <div class="list-files__item item-files-second">
                     <div class="item-files-second__top">
                       <div class="item-files-second__icon-file">
@@ -623,7 +724,162 @@
     </main>
   </div>
 
-  <script src="js/app.min.js?_v=20250905200027"></script>
+  <div class="products-list-block">
+  <div class="products-list-block__body">
+    <div class="products-list-block__items">
+      <div class="products-list-block__label">Profile</div>
+      <ul class="products-list-block__list list-reset">
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-portfolio"
+            href="#">Portfolio</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-projects" href="#">Projects</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-mail" href="#">Messages</a></li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-wallet" href="#">Wallet</a></li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-referral" href="#">Referral
+            program</a></li>
+      </ul>
+    </div>
+    <div class="products-list-block__items">
+      <div class="products-list-block__label">Teams</div>
+      <ul class="products-list-block__list list-reset">
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-coins" href="#">Tariffs</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-users" href="#">My teams</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-cloud-storage"
+            href="#">Storage</a></li>
+      </ul>
+    </div>
+    <div class="products-list-block__items">
+      <div class="products-list-block__label">Tools</div>
+      <ul class="products-list-block__list list-reset">
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-kanban" href="#">Kanban</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-board" href="#">Boards</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-gantt" href="#">Gantt charts</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-moodboards" href="#">Mood&dream
+            boards</a></li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-todo" href="#">To do list</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-add-document"
+            href="#">Documents</a></li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-add-table" href="#">Tables</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-calendar" href="#">Calendar</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-brainstorm" href="#">Brainstorms
+            tools (soon)</a></li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-reports" href="#">Reports
+            (soon)</a></li>
+      </ul>
+    </div>
+    <div class="products-list-block__items">
+      <div class="products-list-block__label">Education</div>
+      <ul class="products-list-block__list list-reset">
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-test" href="#">Tests (soon)</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-courses" href="#">Courses
+            (soon)</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-teacher" href="#">Teachers
+            (soon)</a>
+        </li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-schools" href="#">Schools
+            (soon)</a></li>
+        <li class="products-list-block__item"><a class="products-list-block__link _icon-intership" href="#">Intership
+            (soon)</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <div class="notifications-content">
+  <div class="notifications-content__wrapper">
+    <div class="notifications-content__header">
+      <div class="notifications-content__inner">
+        <h3 class="notifications-content__title">Notifications</h3>
+        <div class="notifications-content__text">You have 2 new notifications</div>
+      </div>
+      <button type="button" class="notifications-content__btn btn-reset">Mark all as read</button>
+    </div>
+    <ul class="notifications-content__list list-reset">
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications item-notifications--unread btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications item-notifications--unread btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+    </ul>
+    <button type="button" class="notifications-content__btn-view btn btn--grey btn-reset">View all</button>
+  </div>
+</div>
+  <script src="js/app.min.js?_v=20250907182607"></script>
 </body>
 
 </html>

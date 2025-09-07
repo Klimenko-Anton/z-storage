@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20250905200027">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250907182607">
   <link rel="icon" type="image/x-icon" href="img/favicons/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
   <title>Storage</title>
@@ -32,9 +32,15 @@
                 <a class="menu__link _icon-chevron-down" href="#" data-menu-sub>Products</a>
                 <div class="menu__sub-wrapper">
                   <ul class="menu__sub-list list-reset">
-                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 1</a></li>
-                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 2</a></li>
-                    <li class="menu__sub-item"><a class="menu__sub-link" href="#">Products 3</a></li>
+                    <li class="menu__sub-item">
+                      <a class="menu__sub-link _icon-products" href="#">Products 1</a>
+                    </li>
+                    <li class="menu__sub-item">
+                      <a class="menu__sub-link _icon-products" href="#">Products 2</a>
+                    </li>
+                    <li class="menu__sub-item">
+                      <a class="menu__sub-link _icon-products" href="#">Products 3</a>
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -51,7 +57,7 @@
               </a>
             </li>
             <li class="menu__list-mobile-item">
-              <button class="menu__list-mobile-action btn-reset" type="button" data-popup="#mob-aside">
+              <button class="menu__list-mobile-action btn-reset" type="button" data-menu-products-list>
                 <span class="menu__list-mobile-icon _icon-products"></span>
                 <span class="menu__list-mobile-value">Products</span>
               </button>
@@ -66,7 +72,7 @@
         </div>
         <div class="header__actions actions-header">
           <div class="actions-header__wrapper">
-            <div class="actions-header__col">
+            <div class="actions-header__main">
               <div class="actions-header__profile-user profile-user">
                 <div class="profile-user__preview">
                   <div class="profile-user__avatar"></div>
@@ -94,101 +100,13 @@
             </ul>
           </div>
           <div class="actions-header__inner">
-            <!-- клсс notifications-block--empty скрывает notifications-block__alert -->
-
-            <div class="actions-header__notifications notifications-block"
+            <button type="button"
+              class="actions-header__notifications-icon notifications-icon btn-round btn-round--50 btn-round--small btn-reset _icon-notification"
               data-da=".actions-header__wrapper, 767.98, last">
-              <button type="button"
-                class="notifications-block__icon btn-round btn-round--50 btn-reset _icon-notification">
-                <span class="visually-hidden">Notifications</span>
-                <span class="notifications-block__alert">
-                  <!-- span внутри покрасит в синий цвет -->
-                </span>
-              </button>
-              <div class="notifications-block__body">
-                <div class="notifications-block__wrapper">
-                  <div class="notifications-block__header">
-                    <div class="notifications-block__inner">
-                      <h3 class="notifications-block__title">Notifications</h3>
-                      <div class="notifications-block__text">You have 2 new notifications</div>
-                    </div>
-                    <button type="button" class="notifications-block__btn btn-reset">Mark all as read</button>
-                  </div>
-                  <ul class="notifications-block__list list-reset">
-                    <li class="notifications-block__item item-notifications item-notifications--unread">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications item-notifications--unread">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">Upcoming event</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">1d</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                    <li class="notifications-block__item item-notifications">
-                      <div class="item-notifications__preview"></div>
-                      <div class="item-notifications__body">
-                        <h3 class="item-notifications__title">New message from Jane</h3>
-                        <div class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
-                          ipsum dolor
-                          sit amet consectetuer</div>
-                      </div>
-                      <div class="item-notifications__time">2h</div>
-                    </li>
-                  </ul>
-                  <button type="button" class="notifications-block__btn-view btn btn--grey btn-reset">View
-                    all</button>
-                </div>
-              </div>
-            </div>
+              <!-- класс notifications-icon--empty скрывает notifications-block__alert -->
+              <span class="visually-hidden">Notifications</span>
+              <span class="notifications-icon__alert"></span>
+            </button>
             <div class="actions-header__profile-user-mini profile-user-mini">
               <button class="profile-user-mini__current btn-reset" type="button">
                 <span class="profile-user-mini__avatar"></span>
@@ -638,7 +556,7 @@
     </main>
   </div>
 
-  <script src="js/app.min.js?_v=20250905200027"></script>
+  <script src="js/app.min.js?_v=20250907182607"></script>
 </body>
 
 </html>
