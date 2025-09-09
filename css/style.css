@@ -2993,6 +2993,7 @@ h5,
 
 .main-aside__btn-out::before {
   font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .main-aside__btn-out span {
