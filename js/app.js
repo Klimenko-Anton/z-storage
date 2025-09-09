@@ -8094,6 +8094,7 @@ da.init();
 window.addEventListener("DOMContentLoaded", function () {
   // windowObserver();
   document.addEventListener("click", documentActions);
+  initNotificationsDropdown();
 });
 
 
@@ -8174,15 +8175,6 @@ function documentActions(e) {
     })
   }
 
-  // if (targetElement.closest("[data-menu-products-list]")) {
-  //   if (!targetElement.closest("[data-menu-products-list]")) return;
-  //   document.documentElement.classList.toggle("_show-products-list");
-  //   targetElement.closest("[data-menu-products-list]").classList.toggle("menu__list-mobile-action--active");
-  // } else if (!targetElement.closest(".products-list-block") && document.documentElement.classList.contains("_show-products-list")) {
-  //   document.documentElement.classList.remove("_show-products-list");
-  //   document.querySelector("[data-menu-products-list]").classList.remove("menu__list-mobile-action--active");
-  // }
-
   if (targetElement.closest("[data-aside-open]")) {
     targetElement.closest(".aside").classList.toggle("is-aside-open");
   }
@@ -8249,106 +8241,13 @@ function filesCheckedUpdates() {
 filesCheckedUpdates();
 
 
-//========================================================================================================================================================
 
-// (function () {
-//   const icon = document.querySelector('.notifications-icon');
-//   const content = document.querySelector('.notifications-content');
-
-//   if (!icon || !content) {
-//     return;
-//   }
-
-//   let isOpen = false;
-
-//   // Функция переключения видимости
-//   function toggleNotifications() {
-//     isOpen = !isOpen;
-//     if (isOpen) {
-//       positionNotifications();
-//       content.classList.add('is-open');
-//     } else {
-//       content.classList.remove('is-open');
-//     }
-//   }
-
-//   // Функция позиционирования
-//   function positionNotifications() {
-//     // На мобильных — позиционирование через CSS, JS не трогает
-//     if (window.innerWidth <= 768) return;
-
-//     const iconRect = icon.getBoundingClientRect();
-//     const contentRect = content.getBoundingClientRect();
-
-//     let left, top, transform = 'none';
-
-//     if (window.innerWidth >= 1200) {
-//       // 🖥️ >1200: по центру иконки
-//       left = iconRect.left + iconRect.width / 2;
-//       top = iconRect.bottom + 15;
-//       transform = 'translateX(-50%)';
-//     } else {
-//       // 📱 768–1199: справа и снизу от иконки, но не вылезать за экран
-
-//       // Предлагаемая позиция: вплотную справа и снизу
-//       let proposedLeft = iconRect.right;
-//       let proposedTop = iconRect.bottom + 15;
-
-//       // Проверяем: если блок вылезает за правый край — прижимаем его к правому краю с отступом 10px
-//       if (proposedLeft + contentRect.width > window.innerWidth) {
-//         proposedLeft = window.innerWidth - contentRect.width - 10;
-//       }
-
-//       // Убедимся, что не уходим за левый край
-//       if (proposedLeft < 10) {
-//         proposedLeft = 10;
-//       }
-
-//       left = proposedLeft;
-//       top = proposedTop;
-//     }
-
-//     // Применяем стили
-//     content.style.left = `${left}px`;
-//     content.style.top = `${top}px`;
-//     content.style.transform = transform;
-//   }
-
-//   // Закрытие по клику вне блока
-//   function handleClickOutside(e) {
-//     if (
-//       isOpen &&
-//       !content.contains(e.target) &&
-//       !icon.contains(e.target)
-//     ) {
-//       toggleNotifications();
-//     }
-//   }
-
-//   // Обработчики событий
-//   icon.addEventListener('click', (e) => {
-//     e.stopPropagation(); // предотвращаем всплытие, чтобы не закрылся сразу
-//     toggleNotifications();
-//   });
-
-//   document.addEventListener('click', handleClickOutside);
-
-//   window.addEventListener('resize', () => {
-//     if (isOpen) positionNotifications();
-//   });
-
-//   window.addEventListener('scroll', () => {
-//     if (isOpen) positionNotifications();
-//   }, { passive: true });
-// })();
-//========================================================================================================================================================
-
-
-(function () {
+function initNotificationsDropdown() {
   const icon = document.querySelector('.notifications-icon');
   const content = document.querySelector('.notifications-content');
+  const header = document.querySelector('.header__body');
 
-  if (!icon || !content) {
+  if (!icon || !content || !header) {
     return;
   }
 
@@ -8368,52 +8267,46 @@ filesCheckedUpdates();
   function toggleNotifications() {
     isOpen = !isOpen;
     if (isOpen) {
-      positionNotifications();
+      positionNotificationsRelativeToHeader();
       content.classList.add('is-open');
     } else {
       content.classList.remove('is-open');
-      // content.style.left = '';
-      // content.style.top = '';
-      // content.style.transform = '';
     }
   }
 
-  function positionNotifications() {
+  function positionNotificationsRelativeToHeader() {
     if (window.innerWidth <= 767.98) {
+      // content.style.position = 'relative';
       content.style.left = '';
+      content.style.right = '';
       content.style.top = '';
       content.style.transform = '';
       return;
     }
 
-    const iconRect = icon.getBoundingClientRect();
+    const headerRect = header.getBoundingClientRect();
     const contentRect = content.getBoundingClientRect();
 
-    let left, top, transform = 'none';
+    // Позиция: 5px справа от правого края .header__body
+    const rightOffset = 5;
+    const left = headerRect.left + rightOffset; // ← ключевая строка
 
-    if (window.innerWidth >= 1200) {
-      left = iconRect.left + iconRect.width / 2;
-      top = iconRect.bottom + 15;
-      transform = 'translateX(-50%)';
-    } else {
-      let proposedLeft = iconRect.right;
-      let proposedTop = iconRect.bottom + 15;
+    // Верхняя позиция: чуть ниже шапки
+    const top = headerRect.bottom + 5;
 
-      if (proposedLeft + contentRect.width > window.innerWidth) {
-        proposedLeft = window.innerWidth - contentRect.width - 10;
-      }
-
-      if (proposedLeft < 10) {
-        proposedLeft = 10;
-      }
-
-      left = proposedLeft;
-      top = proposedTop;
-    }
-
-    content.style.left = `${left}px`;
+    // Устанавливаем позицию относительно окна
+    // content.style.position = 'fixed'; // ← fixed — отсчёт от окна
+    content.style.left = 'auto';
     content.style.top = `${top}px`;
-    content.style.transform = transform;
+    content.style.right = `${left}px`;
+    content.style.transform = 'none';
+    content.style.zIndex = '1000';
+
+    // Проверка: не выходит ли за границы окна
+    if (left + contentRect.width > window.innerWidth) {
+      // Сдвигаем влево, если не помещается
+      content.style.left = `${window.innerWidth - contentRect.width - 10}px`;
+    }
   }
 
   function handleClickOutside(e) {
@@ -8433,12 +8326,12 @@ filesCheckedUpdates();
 
   document.addEventListener('click', handleClickOutside);
 
-  const throttledPosition = throttle(positionNotifications, 150);
+  const throttledPosition = throttle(positionNotificationsRelativeToHeader, 150);
 
   window.addEventListener('resize', () => {
     if (isOpen) throttledPosition();
   });
-})();
+}
 ;// CONCATENATED MODULE: ./src/js/app.js
 
 
