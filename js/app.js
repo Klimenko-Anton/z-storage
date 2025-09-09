@@ -807,304 +807,6 @@ function dataMediaQueries(array, dataSetValue) {
     }
   }
 }
-;// CONCATENATED MODULE: ./src/js/files/view-files.js
-// const viewBtns = document.querySelectorAll("[data-view]");
-// const filesBody = document.querySelector(".list-files__body");
-// const currentView = localStorage.getItem("view") || "list";
-
-// const templateFileViewList = `
-//  <div class="list-files__item item-files" data-dropdown-parent>
-//     <div class="item-files__row">
-//       <div class="item-files__wrapper">
-//         <div class="item-files__checkbox checkbox">
-//           <label class="checkbox__item checkbox__item--second">
-//             <input class="checkbox__input" type="checkbox">
-//             <span class="checkbox__label"></span>
-//           </label>
-//         </div>
-//       </div>
-//       <div class="item-files__wrapper">
-//         <div class="item-files__documents">
-//           <div class="item-files__icon">
-//             <img src="./img/icons/excel.svg" alt="" loading="lazy">
-//           </div>
-//           <div class="item-files__title">File name File name File name File name File name File name
-//           </div>
-//         </div>
-//       </div>
-//       <div class="item-files__wrapper">
-//         <div class="item-files__text">Order №</div>
-//         <div class="item-files__value">122</div>
-//       </div>
-//       <div class="item-files__wrapper">
-//         <div class="item-files__text">Member</div>
-//         <div class="item-files__members members">
-//           <div class="members__items">
-//             <div class="members__item">
-//               <img src="./img/members/01.webp" alt="" loading="lazy">
-//             </div>
-//             <div class="members__item">
-//               <img src="./img/members/02.webp" alt="" loading="lazy">
-//             </div>
-//             <div class="members__item">
-//               <img src="./img/members/03.webp" alt="" loading="lazy">
-//             </div>
-//             <div class="members__item">
-//               <img src="./img/members/04.webp" alt="" loading="lazy">
-//             </div>
-//           </div>
-//           <div class="members__more">+3</div>
-//         </div>
-//       </div>
-//       <div class="item-files__wrapper">
-//         <div class="item-files__text">Last Modified</div>
-//         <div class="item-files__value item-files__value--second">25.05.2025</div>
-//       </div>
-//       <div class="item-files__wrapper">
-//         <div class="item-files__text">Size</div>
-//         <div class="item-files__value item-files__value--second">100 MB</div>
-//       </div>
-//       <div class="item-files__actions">
-//         <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"></button>
-//         <button type="button" class="item-files__btn-action btn-reset _icon-download"></button>
-//         <button type="button" class="item-files__btn-action btn-reset _icon-pen"></button>
-//         <button type="button" class="item-files__btn-action btn-reset _icon-star"></button>
-//         <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
-//           data-dropdown></button>
-//       </div>
-//     </div>
-//     <div class="item-files__dropdown dropdown-menu">
-//       <ul class="dropdown-menu__list list-reset">
-//         <li class="dropdown-menu__item">
-//           <button type="button" class="dropdown-menu__btn btn-reset _icon-download">
-//             Download
-//           </button>
-//         </li>
-//         <li class="dropdown-menu__item">
-//           <button type="button" class="dropdown-menu__btn btn-reset _icon-copy">
-//             Copy
-//           </button>
-//         </li>
-//         <li class="dropdown-menu__item">
-//           <button type="button" class="dropdown-menu__btn btn-reset _icon-pen">
-//             Rename
-//           </button>
-//         </li>
-//         <li class="dropdown-menu__item">
-//           <button type="button" class="dropdown-menu__btn btn-reset _icon-alert">
-//             Details
-//           </button>
-//         </li>
-//         <li class="dropdown-menu__item">
-//           <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
-//             Add to starred
-//           </button>
-//         </li>
-//         <li class="dropdown-menu__item">
-//           <button type="button" class="dropdown-menu__btn btn-reset _icon-trash">
-//             Delete
-//           </button>
-//         </li>
-//       </ul>
-//     </div>
-//   </div>
-// `;
-
-// const templateFileViewGrid = `
-//   <div class="list-files__item item-files-second">
-//     <div class="item-files-second__top">
-//       <div class="item-files-second__icon-file">
-//         <img src="./img/icons/excel.svg" alt="" loading="lazy">
-//       </div>
-//       <div class="item-files-second__name">File name</div>
-//       <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
-//     </div>
-//     <div class="item-files-second__body">
-//       <div class="item-files-second__image">
-//         <img src="./img/files/01.webp" alt="" loading="lazy">
-//       </div>
-//     </div>
-//   </div>
-// `;
-
-
-// if (filesBody) {
-//   filesBody.dataset.temp = currentView;
-// }
-
-// if (filesBody.dataset.temp = "list") {
-//   for (let i = 0; i < 30; i++) {
-//   }
-// }
-
-// if (viewBtns) {
-//   viewBtns.forEach(btn => {
-//     const view = btn.dataset.view;
-//     if (currentView === view) {
-//       btn.classList.add("_view-active");
-//     }
-//     btn.addEventListener("click", function () {
-//       viewBtns.forEach(btn => btn.classList.remove("_view-active"));
-//       btn.classList.add("_view-active")
-//       if (filesBody) {
-//         filesBody.dataset.temp = view;
-//         localStorage.setItem("view", view);
-//       }
-//     })
-//   })
-// }
-
-
-//========================================================================================================================================================
-
-
-
-
-
-const viewBtns = document.querySelectorAll("[data-view]");
-const filesBody = document.querySelector(".list-files__body");
-const currentView = localStorage.getItem("view") || "list";
-
-// Шаблоны
-const templateFileViewList = `
-  <div class="list-files__item item-files" data-dropdown-parent>
-    <div class="item-files__row">
-      <div class="item-files__wrapper">
-        <div class="item-files__checkbox checkbox">
-          <label class="checkbox__item checkbox__item--second">
-            <input class="checkbox__input" type="checkbox">
-            <span class="checkbox__label"></span>
-          </label>
-        </div>
-      </div>
-      <div class="item-files__wrapper">
-        <div class="item-files__documents">
-          <div class="item-files__icon">
-            <img src="./img/icons/excel.svg" alt="" loading="lazy">
-          </div>
-          <div class="item-files__title">File name File name File name File name File name File name</div>
-        </div>
-      </div>
-      <div class="item-files__wrapper">
-        <div class="item-files__text">Order №</div>
-        <div class="item-files__value">122</div>
-      </div>
-      <div class="item-files__wrapper">
-        <div class="item-files__text">Member</div>
-        <div class="item-files__members members">
-          <div class="members__items">
-            <div class="members__item"><img src="./img/members/01.webp" alt="" loading="lazy"></div>
-            <div class="members__item"><img src="./img/members/02.webp" alt="" loading="lazy"></div>
-            <div class="members__item"><img src="./img/members/03.webp" alt="" loading="lazy"></div>
-            <div class="members__item"><img src="./img/members/04.webp" alt="" loading="lazy"></div>
-          </div>
-          <div class="members__more">+3</div>
-        </div>
-      </div>
-      <div class="item-files__wrapper">
-        <div class="item-files__text">Last Modified</div>
-        <div class="item-files__value item-files__value--second">25.05.2025</div>
-      </div>
-      <div class="item-files__wrapper">
-        <div class="item-files__text">Size</div>
-        <div class="item-files__value item-files__value--second">100 MB</div>
-      </div>
-      <div class="item-files__actions">
-        <button type="button" class="item-files__btn-action btn-reset _icon-plus-user" data-tippy-content="Скачать файл"></button>
-        <button type="button" class="item-files__btn-action btn-reset _icon-download" data-tippy-content="Скачать файл"></button>
-        <button type="button" class="item-files__btn-action btn-reset _icon-pen" data-tippy-content="Скачать файл"></button>
-        <button type="button" class="item-files__btn-action btn-reset _icon-star" data-tippy-content="Скачать файл"></button>
-        <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert" data-dropdown></button>
-      </div>
-    </div>
-    <div class="item-files__dropdown dropdown-menu">
-      <ul class="dropdown-menu__list list-reset">
-        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-download">Download</button></li>
-        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-copy">Copy</button></li>
-        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-pen">Rename</button></li>
-        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-alert">Details</button></li>
-        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-star">Add to starred</button></li>
-        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-trash">Delete</button></li>
-      </ul>
-    </div>
-  </div>
-`;
-
-const templateFileViewGrid = `
-  <div class="list-files__item item-files-second">
-    <div class="item-files-second__top">
-      <div class="item-files-second__icon-file">
-        <img src="./img/icons/excel.svg" alt="" loading="lazy">
-      </div>
-      <div class="item-files-second__name">File name</div>
-      <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
-    </div>
-    <div class="item-files-second__body">
-      <div class="item-files-second__image">
-        <img src="./img/files/01.webp" alt="" loading="lazy">
-      </div>
-    </div>
-  </div>
-`;
-
-// Функция для рендеринга файлов
-function renderFiles(view) {
-  if (!filesBody) return;
-
-  // Очищаем контейнер
-  filesBody.innerHTML = '';
-
-  // Количество файлов
-  const fileCount = 30;
-
-  // Выбираем шаблон
-  const template = view === "grid" ? templateFileViewGrid : templateFileViewList;
-
-  // Добавляем нужное количество элементов
-  for (let i = 0; i < fileCount; i++) {
-    filesBody.insertAdjacentHTML('beforeend', template);
-  }
-
-  // Устанавливаем атрибут для стилей (если используется в CSS)
-  filesBody.dataset.temp = view;
-}
-
-// Устанавливаем активную кнопку
-function setActiveButton(view) {
-  viewBtns.forEach(btn => {
-    btn.classList.toggle("_view-active", btn.dataset.view === view);
-  });
-}
-
-// Инициализация при загрузке
-if (filesBody) {
-  renderFiles(currentView);
-}
-
-// Обработка кликов по кнопкам переключения вида
-if (viewBtns.length) {
-  viewBtns.forEach(btn => {
-    const view = btn.dataset.view;
-
-    // Устанавливаем активный класс при инициализации
-    if (currentView === view) {
-      btn.classList.add("_view-active");
-    }
-
-    btn.addEventListener("click", function () {
-      const newView = this.dataset.view;
-
-      // Обновляем localStorage
-      localStorage.setItem("view", newView);
-
-      // Перерисовываем файлы
-      renderFiles(newView);
-
-      // Обновляем активную кнопку
-      setActiveButton(newView);
-    });
-  });
-}
 ;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getWindow.js
 function getWindow(node) {
   if (node == null) {
@@ -8398,6 +8100,21 @@ window.addEventListener("DOMContentLoaded", function () {
 function documentActions(e) {
   const targetElement = e.target;
 
+  // Переключение тем
+
+  if (targetElement.closest(".theme-dark")) {
+    if (document.documentElement.classList.contains("light")) {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    }
+  } else if (targetElement.closest(".theme-light")) {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    }
+  }
+
+
   if (targetElement.closest(".profile-aside__account-current")) {
     targetElement.closest(".profile-aside__accounts").classList.toggle("_open-accounts");
   } else if (!targetElement.closest(".profile-aside__wrapper") && document.querySelector(".profile-aside__accounts._open-accounts")) {
@@ -8411,20 +8128,21 @@ function documentActions(e) {
     if (activeDropdown && activeDropdown !== targetElement) {
       activeDropdown.classList.remove("_open-dropdown");
     }
-  }
-  else if (!targetElement.closest(".dropdown-menu") && document.querySelector(".item-files._open-dropdown")) {
-    document.querySelector(".item-files").classList.remove("_open-dropdown");
+  } else if (!targetElement.closest(".dropdown-menu")) {
+    if (document.querySelector('.dropdown-menu')) {
+      document.querySelector(".item-files").classList.remove("_open-dropdown");
+    }
   }
 
-  if (targetElement.closest("[data-menu-sub]")) {
+  if (targetElement.closest("[data-menu-products]")) {
     e.preventDefault();
-    const activeEl = document.querySelector("._show-submenu");
-    targetElement.closest(".menu__item").classList.toggle("_show-submenu");
-    if (activeEl && activeEl !== targetElement) {
-      activeEl.classList.remove("_show-submenu");
-    }
-  } else if (!targetElement.closest(".menu__sub-list") && document.querySelector(".menu__item._show-submenu")) {
-    document.querySelectorAll(".menu__item").forEach(item => item.classList.remove("_show-submenu"));
+    document.documentElement.classList.toggle("_show-products-list");
+    document.documentElement.classList.add("lock");
+    targetElement.closest("[data-menu-products]").classList.toggle('_active-link');
+  } else if (!targetElement.closest(".products-list-block") && document.documentElement.classList.contains("_show-products-list")) {
+    document.documentElement.classList.remove("_show-products-list");
+    document.documentElement.classList.remove("lock");
+    document.querySelector("[data-menu-products]").classList.remove('_active-link');
   }
 
   // if (targetElement.closest(".notifications-block__icon")) {
@@ -8456,13 +8174,14 @@ function documentActions(e) {
     })
   }
 
-  if (targetElement.closest("[data-menu-products-list]")) {
-    document.documentElement.classList.toggle("_show-products-list");
-    targetElement.closest("[data-menu-products-list]").classList.toggle("menu__list-mobile-action--active");
-  } else if (!targetElement.closest(".products-list-block") && document.documentElement.classList.contains("_show-products-list")) {
-    document.documentElement.classList.remove("_show-products-list");
-    document.querySelector("[data-menu-products-list]").classList.remove("menu__list-mobile-action--active");
-  }
+  // if (targetElement.closest("[data-menu-products-list]")) {
+  //   if (!targetElement.closest("[data-menu-products-list]")) return;
+  //   document.documentElement.classList.toggle("_show-products-list");
+  //   targetElement.closest("[data-menu-products-list]").classList.toggle("menu__list-mobile-action--active");
+  // } else if (!targetElement.closest(".products-list-block") && document.documentElement.classList.contains("_show-products-list")) {
+  //   document.documentElement.classList.remove("_show-products-list");
+  //   document.querySelector("[data-menu-products-list]").classList.remove("menu__list-mobile-action--active");
+  // }
 
   if (targetElement.closest("[data-aside-open]")) {
     targetElement.closest(".aside").classList.toggle("is-aside-open");
@@ -8529,6 +8248,8 @@ function filesCheckedUpdates() {
 
 filesCheckedUpdates();
 
+
+//========================================================================================================================================================
 
 // (function () {
 //   const icon = document.querySelector('.notifications-icon');
@@ -8620,6 +8341,7 @@ filesCheckedUpdates();
 //     if (isOpen) positionNotifications();
 //   }, { passive: true });
 // })();
+//========================================================================================================================================================
 
 
 (function () {
@@ -8733,7 +8455,7 @@ headerScroll();
 
 //========================================================================================================================================================
 
-
+// import "./files/view-files.js";
 //========================================================================================================================================================
 // Wathcer
 // myFunctions.elementWatches();
@@ -8765,7 +8487,7 @@ headerScroll();
 
 
 //====Показать еще ====================================================================================================================================================
-// myFunctions.showMore();
+showMore();
 
 //========================================================================================================================================================
 

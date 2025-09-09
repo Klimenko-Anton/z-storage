@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru" class="auth">
+<html lang="ru" class="auth light">
 <!-- класс no-auth скрывает кнопку бургера, а когда есть класс auth показывает бургер и скрывается ссылка tariffs на мобильных -->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20250907182607">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250909094937">
   <link rel="icon" type="image/x-icon" href="img/favicons/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
   <title>Главная</title>
@@ -30,20 +30,8 @@
                 <a class="menu__link" href="#">Freelance marketplace</a>
               </li>
               <li class="menu__item">
-                <a class="menu__link _icon-chevron-down" href="#" data-menu-sub>Products</a>
-                <div class="menu__sub-wrapper">
-                  <ul class="menu__sub-list list-reset">
-                    <li class="menu__sub-item">
-                      <a class="menu__sub-link _icon-products" href="#">Products 1</a>
-                    </li>
-                    <li class="menu__sub-item">
-                      <a class="menu__sub-link _icon-products" href="#">Products 2</a>
-                    </li>
-                    <li class="menu__sub-item">
-                      <a class="menu__sub-link _icon-products" href="#">Products 3</a>
-                    </li>
-                  </ul>
-                </div>
+                <button class="menu__link _icon-chevron-down btn-reset" type="button"
+                  data-menu-products>Products</button>
               </li>
               <li class="menu__item">
                 <a class="menu__link" href="#">Tariffs</a>
@@ -58,7 +46,7 @@
               </a>
             </li>
             <li class="menu__list-mobile-item">
-              <button class="menu__list-mobile-action btn-reset" type="button" data-menu-products-list>
+              <button class="menu__list-mobile-action btn-reset" type="button" data-menu-products>
                 <span class="menu__list-mobile-icon _icon-products"></span>
                 <span class="menu__list-mobile-value">Products</span>
               </button>
@@ -134,7 +122,7 @@
 </header>
 
     <main class="page">
-      <div class="page__container page__container--col">
+      <div class="page__container">
         <!-- <aside class="page__aside aside">
           <button type="button" class="aside__open-btn icon-menu icon-menu--close btn-reset"
             aria-label="Close menu"></button>
@@ -310,7 +298,7 @@
                         </label>
                       </div>
                       <button type="button" class="column-aside__btn btn-reset">
-                        <span class="column-aside__icon _icon-mail"></span>
+                        <span class="column-aside__icon _icon-portfolio"></span>
                         <span class="column-aside__name">Portfolio</span>
                       </button>
                     </li>
@@ -428,7 +416,7 @@
           </div>
         </aside>
 
-        <div class="page__content content content--cloud">
+        <div class="page__content content">
           <div class="content__header">
             <button type="button" class="content__btn btn btn--large btn--accent btn-reset _icon-plus">
               Add new file
@@ -438,71 +426,188 @@
               <input autocomplete="off" type="search" name="main-search" placeholder="Search"
                 class="main-search__input input">
             </form>
-          </div>
-          <div class="content__body">
-            <div class="content__items">
-              <div class="content__inner">
-                <div class="content__title">Folders</div>
-                <button class="content__view-btn btn-reset _icon-chevron-down" type="button">View all</button>
-              </div>
-              <div class="content__folders">
-                <div class="content__folder item-folder">
-                  <div class="item-folder__icon _icon-folder-fill"></div>
-                  <div class="item-folder__body">
-                    <div class="item-folder__title">Freelance Orders</div>
-                    <div class="item-folder__row">
-                      <div class="item-folder__quantity">84 files</div>
-                      <div class="item-folder__size">200 MB</div>
-                    </div>
-                  </div>
-                  <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
-                </div>
-                <div class="content__folder item-folder">
-                  <div class="item-folder__icon _icon-folder-fill"></div>
-                  <div class="item-folder__body">
-                    <div class="item-folder__title">Projects</div>
-                    <div class="item-folder__row">
-                      <div class="item-folder__quantity">84 files</div>
-                      <div class="item-folder__size">200 MB</div>
-                    </div>
-                  </div>
-                  <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
-                </div>
-                <div class="content__folder item-folder">
-                  <div class="item-folder__icon _icon-folder-fill"></div>
-                  <div class="item-folder__body">
-                    <div class="item-folder__title">Projects</div>
-                    <div class="item-folder__row">
-                      <div class="item-folder__quantity">84 files</div>
-                      <div class="item-folder__size">200 MB</div>
-                    </div>
-                  </div>
-                  <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
-                </div>
-                <div class="content__folder item-folder">
-                  <div class="item-folder__icon _icon-folder-fill"></div>
-                  <div class="item-folder__body">
-                    <div class="item-folder__title">Projects</div>
-                    <div class="item-folder__row">
-                      <div class="item-folder__quantity">84 files</div>
-                      <div class="item-folder__size">200 MB</div>
-                    </div>
-                  </div>
-                  <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
-                </div>
-                <div class="content__folder item-folder">
-                  <div class="item-folder__icon _icon-folder-fill"></div>
-                  <div class="item-folder__body">
-                    <div class="item-folder__title">Projects</div>
-                    <div class="item-folder__row">
-                      <div class="item-folder__quantity">84 files</div>
-                      <div class="item-folder__size">200 MB</div>
-                    </div>
-                  </div>
-                  <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
-                </div>
+            <div class="themes">
+              <div class="themes__container">
+                <button type="button" class="theme-light">Светлая</button>
+                <button type="button" class="theme-dark">Темная</button>
               </div>
             </div>
+          </div>
+          <div class="content__body">
+            <div class="content__folders-block folders-block" data-showmore="items">
+              <div class="folders-block__top">
+                <h3 class="folders-block__title h5">Folders</h3>
+                <button type="button" class="folders-block__more-btn btn-reset _icon-chevron-down" data-showmore-button>
+                  <span>View all</span>
+                </button>
+              </div>
+              <div class="folders-block__body">
+                <ul class="folders-block__list list-reset" data-showmore-content="1">
+                  <li class="folders-block__folder item-folder item-folder--active">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                  <li class="folders-block__folder item-folder">
+                    <div class="item-folder__icon _icon-folder-fill"></div>
+                    <div class="item-folder__body">
+                      <div class="item-folder__title">Freelance Orders</div>
+                      <div class="item-folder__row">
+                        <div class="item-folder__quantity">84 files</div>
+                        <div class="item-folder__size">200 MB</div>
+                      </div>
+                    </div>
+                    <button type="button" class="item-folder__btn-action btn-reset _icon-dotts-vert"></button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- <div class="content__cloud-files-list cloud-files-list">
+              <h3 class="cloud-files-list__title h5">Recent Files</h3>
+              <div class="cloud-files-list__body">
+                <div class="cloud-files-list__header">
+                  <div class="cloud-files-list__wrapper">
+                    <div class="cloud-files-list__inner">
+                      <div class="cloud-files-list__checkbox checkbox">
+                        <label class="checkbox__item">
+                          <input class="checkbox__input" type="checkbox" value="all">
+                        </label>
+                        <div class="cloud-files-list__arrow _icon-chevron-down"></div>
+                      </div>
+                    </div>
+                    <div class="cloud-files-list__inner">
+                      <button type="button" class="cloud-files-list__btn btn-reset _icon-chevron-down">Type</button>
+                    </div>
+                    <div class="cloud-files-list__inner">
+                      <div class="cloud-files-list__name">Order №</div>
+                    </div>
+                    <div class="cloud-files-list__inner">
+                      <button type="button" class="cloud-files-list__btn btn-reset _icon-chevron-down">Member</button>
+                    </div>
+                    <div class="cloud-files-list__inner">
+                      <button type="button" class="cloud-files-list__btn btn-reset _icon-chevron-down">Last
+                        Modified</button>
+                    </div>
+                    <div class="cloud-files-list__inner">
+                      <button type="button" class="cloud-files-list__btn btn-reset _icon-chevron-down">Size</button>
+                    </div>
+                    <div class="cloud-files-list__inner">
+                      <div class="cloud-files-list__view">
+                        <button type="button" class="cloud-files-list__view-btn btn-reset _icon-grid"
+                          data-view="grid"></button>
+                        <button type="button" class="cloud-files-list__view-btn  btn-reset _icon-align-width"
+                          data-view="list"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cloud-files__actions actions-block">
+                    <div class="actions-block__count-select">
+                      <button type="button" class="actions-block__remove-select _icon-plus btn-reset">
+                        <span class="visually-hidden">Clear selected items</span>
+                      </button>
+                      2 selected
+                    </div>
+                    <div class="actions-block__buttons">
+                      <button type="button" class="actions-block__btn-action _icon-plus-user btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                      <button type="button" class="actions-block__btn-action _icon-download btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                      <button type="button" class="actions-block__btn-action _icon-file-move btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                      <button type="button" class="actions-block__btn-action _icon-trash btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                    </div>
+                  </div>
+                </div>
+                <ul class="cloud-files-list__list list-reset">Список файлов</ul>
+              </div>
+            </div> -->
+
+            <br>
             <div class="content__items">
               <div class="content__inner">
                 <div class="content__title">Recent Files</div>
@@ -510,7 +615,7 @@
               <div class="content__list-files list-files">
                 <div class="list-files__top">
                   <div class="list-files__row">
-                    <div class="list-files__items">
+                    <div class="list-files__col">
                       <div class="list-files__checkbox checkbox">
                         <label class="checkbox__item">
                           <input class="checkbox__input" type="checkbox" value="all">
@@ -518,59 +623,167 @@
                         <div class="list-files__arrow _icon-chevron-down"></div>
                       </div>
                     </div>
-                    <div class="list-files__items">
-                      <div class="list-files__label">
+                    <div class="list-files__col">
+                      <button class="list-files__label btn-reset" type="button">
                         Type
-                        <div class="list-files__arrow _icon-chevron-down"></div>
-                      </div>
+                        <span class="list-files__arrow _icon-chevron-down"></span>
+                      </button>
                     </div>
-                    <div class="list-files__items">
+                    <div class="list-files__col">
                       <div class="list-files__label">Order №</div>
                     </div>
-                    <div class="list-files__items">
-                      <div class="list-files__label">
+                    <div class="list-files__col">
+                      <button class="list-files__label btn-reset" type="button">
                         Member
-                        <div class="list-files__arrow _icon-chevron-down"></div>
-                      </div>
+                        <span class="list-files__arrow _icon-chevron-down"></span>
+                      </button>
                     </div>
-                    <div class="list-files__items">
-                      <div class="list-files__label">
+                    <div class="list-files__col">
+                      <button class="list-files__label btn-reset" type="button">
                         Last Modified
-                        <div class="list-files__arrow _icon-chevron-down"></div>
-                      </div>
+                        <span class="list-files__arrow _icon-chevron-down"></span>
+                      </button>
                     </div>
-                    <div class="list-files__items">
-                      <div class="list-files__label">
+                    <div class="list-files__col">
+                      <button class="list-files__label btn-reset" type="button">
                         Size
-                        <div class="list-files__arrow _icon-chevron-down"></div>
+                        <span class="list-files__arrow _icon-chevron-down"></span>
+                      </button>
+                    </div>
+                    <div class="list-files__col">
+                      <div class="list-files__view">
+                        <button type="button" class="list-files__view-btn btn-reset _icon-grid"
+                          data-view="grid"></button>
+                        <button type="button" class="list-files__view-btn  btn-reset _icon-align-width"
+                          data-view="list"></button>
                       </div>
                     </div>
                   </div>
-                  <div class="list-files__view">
-                    <button type="button" class="list-files__view-btn btn-reset _icon-grid" data-view="grid"></button>
-                    <button type="button" class="list-files__view-btn  btn-reset _icon-align-width"
-                      data-view="list"></button>
-                  </div>
-                </div>
-                <div class="list-files__actions actions-list-files">
-                  <div class="actions-list-files__count-select">
-                    <button type="button" class="actions-list-files__remove-select _icon-plus btn-reset">
-                      <span class="visually-hidden">Clear selected items</span>
-                    </button>
-                    2 selected
-                  </div>
-                  <div class="actions-list-files__buttons">
-                    <button type="button" class="actions-list-files__btn-action _icon-plus-user btn-reset"
-                      data-tippy-content="Добавить пользователя"></button>
-                    <button type="button" class="actions-list-files__btn-action _icon-download btn-reset"
-                      data-tippy-content="Добавить пользователя"></button>
-                    <button type="button" class="actions-list-files__btn-action _icon-file-move btn-reset"
-                      data-tippy-content="Добавить пользователя"></button>
-                    <button type="button" class="actions-list-files__btn-action _icon-trash btn-reset"
-                      data-tippy-content="Добавить пользователя"></button>
+                  <div class="list-files__actions actions-block">
+                    <div class="actions-block__count-select">
+                      <button type="button" class="actions-block__remove-select _icon-plus btn-reset">
+                        <span class="visually-hidden">Clear selected items</span>
+                      </button>
+                      2 selected
+                    </div>
+                    <div class="actions-block__buttons">
+                      <button type="button" class="actions-block__btn-action _icon-plus-user btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                      <button type="button" class="actions-block__btn-action _icon-download btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                      <button type="button" class="actions-block__btn-action _icon-file-move btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                      <button type="button" class="actions-block__btn-action _icon-trash btn-reset"
+                        data-tippy-content="Добавить пользователя"></button>
+                    </div>
                   </div>
                 </div>
                 <div class="list-files__body">
+                  <ul class="list-files__list list-reset">
+                    <li class="list-files__items">
+                      <div class="list-files__item item-files" data-dropdown-parent>
+                        <div class="item-files__row">
+                          <div class="item-files__wrapper">
+                            <div class="item-files__checkbox checkbox">
+                              <label class="checkbox__item checkbox__item--second">
+                                <input class="checkbox__input" type="checkbox">
+                                <span class="checkbox__label"></span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="item-files__wrapper">
+                            <div class="item-files__documents">
+                              <div class="item-files__icon">
+                                <img src="img/icons/excel.svg" alt="" loading="lazy">
+                              </div>
+                              <div class="item-files__title">File name File name File name File name File name File name
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-files__wrapper">
+                            <div class="item-files__text">Order №</div>
+                            <div class="item-files__value">122</div>
+                          </div>
+                          <div class="item-files__wrapper">
+                            <div class="item-files__text">Member</div>
+                            <div class="item-files__members members">
+                              <div class="members__items">
+                                <div class="members__item">
+                                  <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
+                                </div>
+                                <div class="members__item">
+                                  <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
+                                </div>
+                                <div class="members__item">
+                                  <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
+                                </div>
+                                <div class="members__item">
+                                  <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
+                                </div>
+                              </div>
+                              <div class="members__more">+3</div>
+                            </div>
+                          </div>
+                          <div class="item-files__wrapper">
+                            <div class="item-files__text">Last Modified</div>
+                            <div class="item-files__value item-files__value--second">25.05.2025</div>
+                          </div>
+                          <div class="item-files__wrapper">
+                            <div class="item-files__text">Size</div>
+                            <div class="item-files__value item-files__value--second">100 MB</div>
+                          </div>
+                          <div class="item-files__wrapper">
+                            <div class="item-files__actions">
+                              <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"
+                                data-tippy-content="Скачать файл"></button>
+                              <button type="button" class="item-files__btn-action btn-reset _icon-download"
+                                data-tippy-content="Скачать файл"></button>
+                              <button type="button" class="item-files__btn-action btn-reset _icon-pen"
+                                data-tippy-content="Скачать файл"></button>
+                              <button type="button" class="item-files__btn-action btn-reset _icon-star"
+                                data-tippy-content="Скачать файл"></button>
+                              <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
+                                data-dropdown></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-files__dropdown dropdown-menu">
+                          <ul class="dropdown-menu__list list-reset">
+                            <li class="dropdown-menu__item">
+                              <button type="button" class="dropdown-menu__btn btn-reset _icon-download">
+                                Download
+                              </button>
+                            </li>
+                            <li class="dropdown-menu__item">
+                              <button type="button" class="dropdown-menu__btn btn-reset _icon-copy">
+                                Copy
+                              </button>
+                            </li>
+                            <li class="dropdown-menu__item">
+                              <button type="button" class="dropdown-menu__btn btn-reset _icon-pen">
+                                Rename
+                              </button>
+                            </li>
+                            <li class="dropdown-menu__item">
+                              <button type="button" class="dropdown-menu__btn btn-reset _icon-alert">
+                                Details
+                              </button>
+                            </li>
+                            <li class="dropdown-menu__item">
+                              <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
+                                Add to starred
+                              </button>
+                            </li>
+                            <li class="dropdown-menu__item">
+                              <button type="button" class="dropdown-menu__btn btn-reset _icon-trash">
+                                Delete
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                   <!-- <div class="list-files__item item-files" data-dropdown-parent>
                     <div class="item-files__row">
                       <div class="item-files__wrapper">
@@ -687,23 +900,18 @@
                 </div>
                 <div class="list-files__bottom">
                   <div class="list-files__pagging pagging">
-                    <button type="button" class="pagging__arrow pagging__arrow--prev btn-reset" disabled>
-                      <svg class="icon icon--stroke">
-                        <use href="img/icons/icons.svg#arrow-down"></use>
-                      </svg>
-                    </button>
+                    <button type="button" class="pagging__arrow pagging__arrow--prev btn-reset _icon-chevron-down"
+                      disabled></button>
                     <ul class="pagging__list list-reset">
-                      <li class="pagging__item"><a class="pagging__page pagging__page--active" href="#">1</a></li>
+                      <li class="pagging__item"><a class="pagging__page pagging__page--active" href="#"
+                          tabindex="-1">1</a></li>
                       <li class="pagging__item"><a class="pagging__page" href="#">2</a></li>
                       <li class="pagging__item"><a class="pagging__page" href="#">3</a></li>
                       <li class="pagging__item"><a class="pagging__page" href="#">4</a></li>
                       <li class="pagging__item"><a class="pagging__page" href="#">5</a></li>
                     </ul>
-                    <button type="button" class="pagging__arrow pagging__arrow--next btn-reset">
-                      <svg class="icon icon--stroke">
-                        <use href="img/icons/icons.svg#arrow-down"></use>
-                      </svg>
-                    </button>
+                    <button type="button"
+                      class="pagging__arrow pagging__arrow--next btn-reset _icon-chevron-down"></button>
                   </div>
                   <div class="list-files__items-count">
                     <div class="list-files__items-count-label">Items per page</div>
@@ -725,73 +933,108 @@
   </div>
 
   <div class="products-list-block">
-  <div class="products-list-block__body">
-    <div class="products-list-block__items">
-      <div class="products-list-block__label">Profile</div>
-      <ul class="products-list-block__list list-reset">
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-portfolio"
-            href="#">Portfolio</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-projects" href="#">Projects</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-mail" href="#">Messages</a></li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-wallet" href="#">Wallet</a></li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-referral" href="#">Referral
-            program</a></li>
-      </ul>
+  <div class="products-list-block__wrapper">
+    <div class="products-list-block__body">
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Profile</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-portfolio"
+              href="#">Portfolio</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-projects"
+              href="#">Projects</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-mail" href="#">Messages</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-wallet" href="#">Wallet</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-referral" href="#">Referral
+              program</a></li>
+        </ul>
+      </div>
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Teams</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-coins" href="#">Tariffs</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-users" href="#">My teams</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-cloud-storage"
+              href="#">Storage</a></li>
+        </ul>
+      </div>
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Tools</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-kanban" href="#">Kanban</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-board" href="#">Boards</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-gantt" href="#">Gantt
+              charts</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-moodboard" href="#">Mood&dream
+              boards</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-todo" href="#">To do list</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-add-document"
+              href="#">Documents</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-add-table" href="#">Tables</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-calendar"
+              href="#">Calendar</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-brainstorm"
+              href="#">Brainstorms
+              tools (soon)</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-reports" href="#">Reports
+              (soon)</a></li>
+        </ul>
+      </div>
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Education</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-test" href="#">Tests
+              (soon)</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-courses" href="#">Courses
+              (soon)</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-teacher" href="#">Teachers
+              (soon)</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-schools" href="#">Schools
+              (soon)</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-intership" href="#">Intership
+              (soon)</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="products-list-block__items">
-      <div class="products-list-block__label">Teams</div>
-      <ul class="products-list-block__list list-reset">
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-coins" href="#">Tariffs</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-users" href="#">My teams</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-cloud-storage"
-            href="#">Storage</a></li>
-      </ul>
-    </div>
-    <div class="products-list-block__items">
-      <div class="products-list-block__label">Tools</div>
-      <ul class="products-list-block__list list-reset">
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-kanban" href="#">Kanban</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-board" href="#">Boards</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-gantt" href="#">Gantt charts</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-moodboards" href="#">Mood&dream
-            boards</a></li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-todo" href="#">To do list</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-add-document"
-            href="#">Documents</a></li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-add-table" href="#">Tables</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-calendar" href="#">Calendar</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-brainstorm" href="#">Brainstorms
-            tools (soon)</a></li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-reports" href="#">Reports
-            (soon)</a></li>
-      </ul>
-    </div>
-    <div class="products-list-block__items">
-      <div class="products-list-block__label">Education</div>
-      <ul class="products-list-block__list list-reset">
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-test" href="#">Tests (soon)</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-courses" href="#">Courses
-            (soon)</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-teacher" href="#">Teachers
-            (soon)</a>
-        </li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-schools" href="#">Schools
-            (soon)</a></li>
-        <li class="products-list-block__item"><a class="products-list-block__link _icon-intership" href="#">Intership
-            (soon)</a></li>
-      </ul>
+    <div class="products-list-block__advertising advertising">
+      <div class="advertising__header">
+        <h3 class="advertising__title h2">Free Trial for 14 days. <br>
+          Start now, pick a plan later.
+        </h3>
+        <div class="advertising__descr">No credit card required. No obligation. No risk.</div>
+      </div>
+      <div class="advertising__item card-pricing card-pricing--advert">
+        <div class="card-pricing__header">
+          <div class="card-pricing__title">Team 3</div>
+          <div class="card-pricing__prices prices">
+            <div class="prices__price-current prices__price-current--through">35,9$</div>
+            <div class="prices__price-discount prices__price-discount--free">Free</div>
+            <div class="prices__label">per month</div>
+          </div>
+        </div>
+        <ul class="card-pricing__list list-reset">
+          <li class="card-pricing__item _icon-check">10 participants</li>
+          <li class="card-pricing__item _icon-check">10 projects</li>
+          <li class="card-pricing__item _icon-check">10 GB</li>
+        </ul>
+        <div class="card-pricing__buttons">
+          <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Try now</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -879,7 +1122,7 @@
     <button type="button" class="notifications-content__btn-view btn btn--grey btn-reset">View all</button>
   </div>
 </div>
-  <script src="js/app.min.js?_v=20250907182607"></script>
+  <script src="js/app.min.js?_v=20250909094937"></script>
 </body>
 
 </html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru" class="auth light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250909094937">
+  <link rel="icon" type="image/x-icon" href="img/favicons/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <title>Тарифы</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+  <div class="header__wrapper">
+    <div class="header__container">
+      <div class="header__body">
+        <div class="header__logo">
+          <a class="logo" href="#">
+            <img src="img/logo.svg" alt="Logo">
+          </a>
+        </div>
+        <div class="header__menu menu">
+          <nav class="menu__body">
+            <ul class="menu__list list-reset">
+              <li class="menu__item">
+                <a class="menu__link" href="#">Freelance marketplace</a>
+              </li>
+              <li class="menu__item">
+                <button class="menu__link _icon-chevron-down btn-reset" type="button"
+                  data-menu-products>Products</button>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Tariffs</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="menu__list-mobile list-reset">
+            <li class="menu__list-mobile-item">
+              <a class="menu__list-mobile-action" href="#">
+                <span class="menu__list-mobile-icon _icon-handshake"></span>
+                <span class="menu__list-mobile-value">Freelance</span>
+              </a>
+            </li>
+            <li class="menu__list-mobile-item">
+              <button class="menu__list-mobile-action btn-reset" type="button" data-menu-products>
+                <span class="menu__list-mobile-icon _icon-products"></span>
+                <span class="menu__list-mobile-value">Products</span>
+              </button>
+            </li>
+            <li class="menu__list-mobile-item">
+              <a class="menu__list-mobile-action" href="#">
+                <span class="menu__list-mobile-icon _icon-coins"></span>
+                <span class="menu__list-mobile-value">Tariffs</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__actions actions-header">
+          <div class="actions-header__wrapper">
+            <div class="actions-header__main">
+              <div class="actions-header__profile-user profile-user">
+                <div class="profile-user__preview">
+                  <div class="profile-user__avatar"></div>
+                </div>
+                <div class="profile-user__name">Имя пользователя</div>
+              </div>
+              <div class="actions-header__balance-block balance-block">
+                <div class="balance-block__label">
+                  Balance: <span>0$</span>
+                </div>
+                <button type="button" class="balance-block__btn btn-reset _icon-plus">
+                  <span class="visually-hidden">Top up your balance</span>
+                </button>
+              </div>
+            </div>
+            <ul class="actions-header__list list-reset">
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-settings btn-reset">Settings</button></li>
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-mail btn-reset">Messages</button></li>
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-coins btn-reset">Tariffs</button></li>
+              <li class="actions-header__item"><button type="button"
+                  class="actions-header__btn-action _icon-out btn-reset">Log out</button></li>
+            </ul>
+          </div>
+          <div class="actions-header__inner">
+            <button type="button"
+              class="actions-header__notifications-icon notifications-icon btn-round btn-round--50 btn-round--small btn-reset _icon-notification"
+              data-da=".actions-header__wrapper, 767.98, last">
+              <!-- класс notifications-icon--empty скрывает notifications-block__alert -->
+              <span class="visually-hidden">Notifications</span>
+              <span class="notifications-icon__alert"></span>
+            </button>
+            <div class="actions-header__profile-user-mini profile-user-mini">
+              <button class="profile-user-mini__current btn-reset" type="button">
+                <span class="profile-user-mini__avatar"></span>
+                <span class="profile-user-mini__name">User1111</span>
+                <span class="profile-user-mini__icon _icon-chevron-down"></span>
+              </button>
+              <div class="profile-user-mini__wrapper">
+                <ul class="profile-user-mini__actions list-reset">
+                  <li class="profile-user-mini__actions-item">
+                    <button type="button" class="profile-user-mini__action btn-reset _icon-settings">Settings</button>
+                  </li>
+                  <li class="profile-user-mini__actions-item">
+                    <button type="button" class="profile-user-mini__action btn-reset _icon-out">Log out</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="header__menu-btn icon-menu btn-reset"><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main class="page">
+      <div class="page__tarrifs tarrifs">
+        <div class="themes">
+          <div class="themes__container">
+            <button type="button" class="theme-light">Светлая</button>
+            <button type="button" class="theme-dark">Темная</button>
+          </div>
+        </div>
+        <section class="tarrifs__hero hero-tarrifs">
+          <div class="hero-tarrifs__container hero-tarrifs__container--small">
+            <div class="hero-tarrifs__header">
+              <h1 class="hero-tarrifs__title">ZIO Teams tariffs</h1>
+            </div>
+            <div class="hero-tarrifs__body">
+              <ul class="hero-tarrifs__list list-reset">
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 1</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">9,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">2 participants</li>
+                    <li class="card-pricing__item _icon-check">2 projects</li>
+                    <li class="card-pricing__item _icon-check">2 GB</li>
+                    <li class="card-pricing__item _icon-check">4,95$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                  </div>
+                </li>
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 2</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">19,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">5 participants</li>
+                    <li class="card-pricing__item _icon-check">5 projects</li>
+                    <li class="card-pricing__item _icon-check">5 GB</li>
+                    <li class="card-pricing__item _icon-check">3,98$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                  </div>
+                </li>
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 3</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">35,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">10 participants</li>
+                    <li class="card-pricing__item _icon-check">10 projects</li>
+                    <li class="card-pricing__item _icon-check">10 GB</li>
+                    <li class="card-pricing__item _icon-check">3,59$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                    <button type="button" class="card-pricing__button btn btn--large btn--border btn-reset">Free
+                      Trial</button>
+                  </div>
+                </li>
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 4</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">159,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">50 participants</li>
+                    <li class="card-pricing__item _icon-check">50 projects</li>
+                    <li class="card-pricing__item _icon-check">50 GB</li>
+                    <li class="card-pricing__item _icon-check">3,19$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                  </div>
+                </li>
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 5</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">289,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">100 participants</li>
+                    <li class="card-pricing__item _icon-check">100 projects</li>
+                    <li class="card-pricing__item _icon-check">100 GB</li>
+                    <li class="card-pricing__item _icon-check">2,89$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                  </div>
+                </li>
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 6</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">399,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">150 participants</li>
+                    <li class="card-pricing__item _icon-check">150 projects</li>
+                    <li class="card-pricing__item _icon-check">200 GB</li>
+                    <li class="card-pricing__item _icon-check">2,66$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                  </div>
+                </li>
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 7</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">599,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">250 participants</li>
+                    <li class="card-pricing__item _icon-check">250 projects</li>
+                    <li class="card-pricing__item _icon-check">300 GB</li>
+                    <li class="card-pricing__item _icon-check">2,39$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                  </div>
+                </li>
+                <li class="hero-tarrifs__item card-pricing">
+                  <div class="card-pricing__header">
+                    <div class="card-pricing__title">Team 8</div>
+                    <div class="card-pricing__prices prices">
+                      <div class="prices__price-current">999,9$</div>
+                      <div class="prices__label">per month</div>
+                    </div>
+                  </div>
+                  <ul class="card-pricing__list list-reset">
+                    <li class="card-pricing__item _icon-check">500 participants</li>
+                    <li class="card-pricing__item _icon-check">500 projects</li>
+                    <li class="card-pricing__item _icon-check">400 GB</li>
+                    <li class="card-pricing__item _icon-check">1,99$ per user</li>
+                  </ul>
+                  <div class="card-pricing__buttons">
+                    <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Buy
+                      now</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="tarrifs__faq faq faq--bg">
+          <div class="faq__container faq__container--small">
+            <h2 class="faq__title h1">Вопрос-ответ</h2>
+            <div class="faq__body">
+              <div class="faq__accordion-group accordion-group">
+                <div class="faq__accordion accordion">
+                  <details class="accordion__details" name="faq-tarrifs" open>
+                    <summary class="accordion__summary">
+                      <span class="accordion__title h5 _icon-chevron-down" role="term" aria-details="tarrifs-1">What is
+                        the
+                        Trial Period?</span>
+                    </summary>
+                  </details>
+                  <div class="accordion__content" id="tarrifs-1" role="definition">
+                    <div class="accordion__inner">
+                      <div class="accordion__body">
+                        <p>You will have access to the selected plan for 14 days completely free and without
+                          limitations.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__accordion accordion">
+                  <details class="accordion__details" name="faq-tarrifs">
+                    <summary class="accordion__summary">
+                      <span class="accordion__title h5 _icon-chevron-down" role="term" aria-details="tarrifs-2">What is
+                        the
+                        Trial Period?</span>
+                    </summary>
+                  </details>
+                  <div class="accordion__content" id="tarrifs-2" role="definition">
+                    <div class="accordion__inner">
+                      <div class="accordion__body">
+                        <p>You will have access to the selected plan for 14 days completely free and without
+                          limitations.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__accordion accordion">
+                  <details class="accordion__details" name="faq-tarrifs">
+                    <summary class="accordion__summary">
+                      <span class="accordion__title h5 _icon-chevron-down" role="term" aria-details="tarrifs-3">What is
+                        the
+                        Trial Period?</span>
+                    </summary>
+                  </details>
+                  <div class="accordion__content" id="tarrifs-3" role="definition">
+                    <div class="accordion__inner">
+                      <div class="accordion__body">
+                        <p>You will have access to the selected plan for 14 days completely free and without
+                          limitations.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__accordion accordion">
+                  <details class="accordion__details" name="faq-tarrifs">
+                    <summary class="accordion__summary">
+                      <span class="accordion__title h5 _icon-chevron-down" role="term" aria-details="tarrifs-4">What is
+                        the
+                        Trial Period?</span>
+                    </summary>
+                  </details>
+                  <div class="accordion__content" id="tarrifs-4" role="definition">
+                    <div class="accordion__inner">
+                      <div class="accordion__body">
+                        <p>You will have access to the selected plan for 14 days completely free and without
+                          limitations.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__accordion accordion">
+                  <details class="accordion__details" name="faq-tarrifs">
+                    <summary class="accordion__summary">
+                      <span class="accordion__title h5 _icon-chevron-down" role="term" aria-details="tarrifs-5">What is
+                        the
+                        Trial Period?</span>
+                    </summary>
+                  </details>
+                  <div class="accordion__content" id="tarrifs-5" role="definition">
+                    <div class="accordion__inner">
+                      <div class="accordion__body">
+                        <p>You will have access to the selected plan for 14 days completely free and without
+                          limitations.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="products-list-block">
+  <div class="products-list-block__wrapper">
+    <div class="products-list-block__body">
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Profile</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-portfolio"
+              href="#">Portfolio</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-projects"
+              href="#">Projects</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-mail" href="#">Messages</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-wallet" href="#">Wallet</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-referral" href="#">Referral
+              program</a></li>
+        </ul>
+      </div>
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Teams</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-coins" href="#">Tariffs</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-users" href="#">My teams</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-cloud-storage"
+              href="#">Storage</a></li>
+        </ul>
+      </div>
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Tools</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-kanban" href="#">Kanban</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-board" href="#">Boards</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-gantt" href="#">Gantt
+              charts</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-moodboard" href="#">Mood&dream
+              boards</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-todo" href="#">To do list</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-add-document"
+              href="#">Documents</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-add-table" href="#">Tables</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-calendar"
+              href="#">Calendar</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-brainstorm"
+              href="#">Brainstorms
+              tools (soon)</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-reports" href="#">Reports
+              (soon)</a></li>
+        </ul>
+      </div>
+      <div class="products-list-block__items">
+        <div class="products-list-block__label">Education</div>
+        <ul class="products-list-block__list list-reset">
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-test" href="#">Tests
+              (soon)</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-courses" href="#">Courses
+              (soon)</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-teacher" href="#">Teachers
+              (soon)</a>
+          </li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-schools" href="#">Schools
+              (soon)</a></li>
+          <li class="products-list-block__item"><a class="products-list-block__link _icon-intership" href="#">Intership
+              (soon)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="products-list-block__advertising advertising">
+      <div class="advertising__header">
+        <h3 class="advertising__title h2">Free Trial for 14 days. <br>
+          Start now, pick a plan later.
+        </h3>
+        <div class="advertising__descr">No credit card required. No obligation. No risk.</div>
+      </div>
+      <div class="advertising__item card-pricing card-pricing--advert">
+        <div class="card-pricing__header">
+          <div class="card-pricing__title">Team 3</div>
+          <div class="card-pricing__prices prices">
+            <div class="prices__price-current prices__price-current--through">35,9$</div>
+            <div class="prices__price-discount prices__price-discount--free">Free</div>
+            <div class="prices__label">per month</div>
+          </div>
+        </div>
+        <ul class="card-pricing__list list-reset">
+          <li class="card-pricing__item _icon-check">10 participants</li>
+          <li class="card-pricing__item _icon-check">10 projects</li>
+          <li class="card-pricing__item _icon-check">10 GB</li>
+        </ul>
+        <div class="card-pricing__buttons">
+          <button type="button" class="card-pricing__button btn btn--large btn--accent btn-reset">Try now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="notifications-content">
+  <div class="notifications-content__wrapper">
+    <div class="notifications-content__header">
+      <div class="notifications-content__inner">
+        <h3 class="notifications-content__title">Notifications</h3>
+        <div class="notifications-content__text">You have 2 new notifications</div>
+      </div>
+      <button type="button" class="notifications-content__btn btn-reset">Mark all as read</button>
+    </div>
+    <ul class="notifications-content__list list-reset">
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications item-notifications--unread btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications item-notifications--unread btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+      <li class="notifications-content__item">
+        <button type="button" class="item-notifications btn-reset">
+          <span class="item-notifications__preview"></span>
+          <span class="item-notifications__body">
+            <div class="item-notifications__row">
+              <span class="item-notifications__title">New message from Jane</span>
+              <span class="item-notifications__time">2h</span>
+            </div>
+            <span class="item-notifications__descr">Lorem ipsum dolor sit amet consectetuer Lorem
+              ipsum dolor
+              sit amet consectetuer</span>
+          </span>
+        </button>
+      </li>
+    </ul>
+    <button type="button" class="notifications-content__btn-view btn btn--grey btn-reset">View all</button>
+  </div>
+</div>
+  <script src="js/app.min.js?_v=20250909094937"></script>
+</body>
+
+</html>
