@@ -5234,11 +5234,246 @@ tippy.setDefaultProps({
 ;// CONCATENATED MODULE: ./src/js/libs/tippy.js
 
 
-tippy_esm('[data-tippy-content]', {
-  allowHTML: true,
-  interactive: true,
-  placement: "bottom",
-})
+function initTooltips(selector = '[data-tippy-content]') {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach(el => {
+    if (el._tippy) el._tippy.destroy();
+  });
+
+  tippy_esm('[data-tippy-content]', {
+    appendTo: document.body,
+    allowHTML: true,
+    interactive: true,
+    placement: "bottom",
+    offset: [30, 10],
+  })
+}
+;// CONCATENATED MODULE: ./src/js/files/view-files.js
+
+
+const viewBtns = document.querySelectorAll("[data-view]");
+const filesBody = document.querySelector(".list-files__inner");
+const currentView = localStorage.getItem("view") || "list";
+
+
+const templateFileViewList = `
+  <div class="list-files__item item-files" data-dropdown-parent>
+    <div class="item-files__row">
+      <div class="item-files__wrapper">
+        <div class="item-files__checkbox checkbox">
+          <label class="checkbox__item checkbox__item--second">
+            <input class="checkbox__input" type="checkbox">
+            <span class="checkbox__label"></span>
+          </label>
+        </div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__documents">
+          <div class="item-files__icon">
+            <img src="./img/icons/excel.svg" alt="" loading="lazy">
+          </div>
+          <div class="item-files__title">File name File name File name File name File name File name</div>
+        </div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Order №</div>
+        <div class="item-files__value">122</div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Member</div>
+        <div class="item-files__members members">
+          <div class="members__items">
+            <div class="members__item"><img src="./img/members/01.webp" alt="" loading="lazy"></div>
+            <div class="members__item"><img src="./img/members/02.webp" alt="" loading="lazy"></div>
+            <div class="members__item"><img src="./img/members/03.webp" alt="" loading="lazy"></div>
+            <div class="members__item"><img src="./img/members/04.webp" alt="" loading="lazy"></div>
+          </div>
+          <div class="members__more">+3</div>
+        </div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Last Modified</div>
+        <div class="item-files__value item-files__value--second">25.05.2025</div>
+      </div>
+      <div class="item-files__wrapper">
+        <div class="item-files__text">Size</div>
+        <div class="item-files__value item-files__value--second">100 MB</div>
+      </div>
+      <div class="item-files__actions">
+        <button type="button" class="item-files__btn-action btn-reset _icon-plus-user" data-tippy-content="Скачать файл"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-download" data-tippy-content="Скачать файл"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-pen" data-tippy-content="Скачать файл"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-star" data-tippy-content="Скачать файл"></button>
+        <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert" data-dropdown></button>
+      </div>
+    </div>
+    <div class="item-files__dropdown dropdown-menu">
+      <ul class="dropdown-menu__list list-reset">
+        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-download">Download</button></li>
+        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-copy">Copy</button></li>
+        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-pen">Rename</button></li>
+        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-alert">Details</button></li>
+        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-star">Add to starred</button></li>
+        <li class="dropdown-menu__item"><button type="button" class="dropdown-menu__btn btn-reset _icon-trash">Delete</button></li>
+      </ul>
+    </div>
+  </div>
+`;
+
+const templateFileViewGrid = `
+  <div class="list-files__item item-files-second">
+    <div class="item-files-second__top">
+      <div class="item-files-second__icon-file">
+        <img src="./img/icons/excel.svg" alt="" loading="lazy">
+      </div>
+      <div class="item-files-second__name">File name</div>
+      <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+    </div>
+    <div class="item-files-second__body">
+      <div class="item-files-second__image">
+        <img src="./img/files/01.webp" alt="" loading="lazy">
+      </div>
+    </div>
+  </div>
+`;
+
+function renderFiles(view) {
+  if (!filesBody) return;
+
+  filesBody.innerHTML = '';
+
+  const fileCount = 6;
+
+  const template = view === "grid" ? templateFileViewGrid : templateFileViewList;
+
+  for (let i = 0; i < fileCount; i++) {
+    filesBody.insertAdjacentHTML('beforeend', template);
+  }
+
+  initTooltips();
+  filesBody.dataset.temp = view;
+}
+
+function setActiveButton(view) {
+  viewBtns.forEach(btn => {
+    btn.classList.toggle("_view-active", btn.dataset.view === view);
+  });
+}
+
+if (filesBody) {
+  renderFiles(currentView);
+}
+
+if (viewBtns.length) {
+  viewBtns.forEach(btn => {
+    const view = btn.dataset.view;
+    if (currentView === view) {
+      btn.classList.add("_view-active");
+    }
+    btn.addEventListener("click", function () {
+      const newView = this.dataset.view;
+      localStorage.setItem("view", newView);
+      renderFiles(newView);
+      setActiveButton(newView);
+    });
+  });
+}
+;// CONCATENATED MODULE: ./src/js/files/files-checked.js
+function filesCheckedUpdates() {
+  const parentListEl = document.querySelector(".list-files");
+  if (!parentListEl) return;
+
+  const fileCheckbox = parentListEl.querySelector(".list-files__checkbox");
+  const checkboxInput = fileCheckbox?.querySelector(".checkbox__input");
+  const filesBody = parentListEl.querySelector(".list-files__inner");
+  const actionsFilesBlock = document.querySelector(".actions-block");
+  const removeCheckedAll = actionsFilesBlock?.querySelector(".actions-block__remove-select");
+  const actionsFilesQuantity = actionsFilesBlock?.querySelector(".actions-block__count-select-quantity");
+
+  const updateSelectionState = () => {
+    const checkedItems = Array.from(parentListEl.querySelectorAll(".checkbox__input:checked"));
+    const hasAnyChecked = checkedItems.length > 0;
+
+    if (hasAnyChecked) {
+      parentListEl.classList.add("list-files--selected");
+      if (actionsFilesQuantity) {
+        actionsFilesQuantity.textContent = `${checkedItems.length} selected`;
+      }
+      if (actionsFilesBlock && parentListEl && parentListEl.firstElementChild !== actionsFilesBlock) {
+        parentListEl.prepend(actionsFilesBlock);
+      }
+    } else {
+      parentListEl.classList.remove("list-files--selected");
+      if (actionsFilesQuantity) {
+        actionsFilesQuantity.textContent = "";
+      }
+    }
+  };
+
+  const updateMasterCheckbox = () => {
+    if (!checkboxInput) return;
+    const allChecked = Array.from(parentListEl.querySelectorAll(".item-files .checkbox__input")).every(cb => cb.checked);
+    checkboxInput.checked = allChecked;
+  };
+
+  if (filesBody) {
+    filesBody.removeEventListener("change", handleCheckboxChange);
+    filesBody.addEventListener("change", handleCheckboxChange);
+  }
+
+  function handleCheckboxChange(e) {
+    if (e.target.matches(".checkbox__input")) {
+      const item = e.target.closest(".item-files");
+      if (item) {
+        item.classList.toggle("item-files--active", e.target.checked);
+      }
+      updateMasterCheckbox();
+      updateSelectionState();
+    }
+  }
+
+  if (fileCheckbox && checkboxInput) {
+    checkboxInput.removeEventListener("change", handleMasterCheckbox);
+    checkboxInput.addEventListener("change", handleMasterCheckbox);
+  }
+
+  function handleMasterCheckbox(e) {
+    const checkboxes = parentListEl.querySelectorAll(".item-files .checkbox__input");
+    checkboxes.forEach(cb => {
+      cb.checked = e.target.checked;
+      const item = cb.closest(".item-files");
+      if (item) {
+        item.classList.toggle("item-files--active", e.target.checked);
+      }
+    });
+    updateMasterCheckbox();
+    updateSelectionState();
+  }
+
+  if (removeCheckedAll) {
+    removeCheckedAll.removeEventListener("click", handleRemoveSelection);
+    removeCheckedAll.addEventListener("click", handleRemoveSelection);
+  }
+
+  function handleRemoveSelection() {
+    const checkboxes = parentListEl.querySelectorAll(".item-files .checkbox__input");
+    checkboxes.forEach(cb => {
+      cb.checked = false;
+      const item = cb.closest(".item-files");
+      if (item) {
+        item.classList.remove("item-files--active");
+      }
+    });
+
+    if (checkboxInput) checkboxInput.checked = false;
+    updateSelectionState();
+  }
+
+  updateSelectionState();
+}
+
+filesCheckedUpdates();
+
 ;// CONCATENATED MODULE: ./node_modules/lodash-es/isObject.js
 /**
  * Checks if `value` is the
@@ -8183,65 +8418,6 @@ function documentActions(e) {
 
 
 
-function filesCheckedUpdates() {
-  const fileCheckbox = document.querySelector(".list-files__checkbox");
-  const checkboxInput = fileCheckbox?.querySelector(".checkbox__input");
-  const filesItems = document.querySelectorAll(".item-files");
-
-  const updateMasterCheckbox = () => {
-    if (!checkboxInput) return;
-
-    const allChecked = Array.from(filesItems).every(item => {
-      const checkbox = item.querySelector(".checkbox__input");
-      return checkbox?.checked;
-    });
-    checkboxInput.checked = allChecked;
-  };
-
-  const handleItemCheckboxChange = function (checkbox, item) {
-    if (checkbox.checked) {
-      item.classList.add("item-files--active");
-    } else {
-      item.classList.remove("item-files--active");
-    }
-    updateMasterCheckbox();
-  };
-
-  filesItems.forEach(item => {
-    const checkboxItemFiles = item.querySelector(".checkbox__input");
-    if (checkboxItemFiles) {
-      checkboxItemFiles.addEventListener("change", function () {
-        handleItemCheckboxChange(this, item);
-      });
-
-      if (checkboxItemFiles.checked) {
-        item.classList.add("item-files--active");
-      }
-    }
-  });
-
-  if (fileCheckbox && checkboxInput) {
-    checkboxInput.addEventListener("change", function (e) {
-      filesItems.forEach(item => {
-        const checkboxItemFiles = item.querySelector(".checkbox__input");
-        if (checkboxItemFiles) {
-          checkboxItemFiles.checked = e.target.checked;
-          if (e.target.checked) {
-            item.classList.add("item-files--active");
-          } else {
-            item.classList.remove("item-files--active");
-          }
-        }
-      });
-      updateMasterCheckbox();
-    });
-  }
-}
-
-filesCheckedUpdates();
-
-
-
 function initNotificationsDropdown() {
   const icon = document.querySelector('.notifications-icon');
   const content = document.querySelector('.notifications-content');
@@ -8348,7 +8524,8 @@ headerScroll();
 
 //========================================================================================================================================================
 
-// import "./files/view-files.js";
+
+
 //========================================================================================================================================================
 // Wathcer
 // myFunctions.elementWatches();

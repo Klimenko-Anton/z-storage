@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20250909173849">
+  <link rel="stylesheet" href="css/style.min.css?_v=20250910154213">
   <link rel="icon" type="image/x-icon" href="img/favicons/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
   <title>Главная</title>
@@ -123,9 +123,7 @@
 
     <main class="page">
       <div class="page__container">
-        <!-- <aside class="page__aside aside">
-          <button type="button" class="aside__open-btn icon-menu icon-menu--close btn-reset"
-            aria-label="Close menu"></button>
+        <aside class="page__aside aside">
           <div class="aside__body">
             <div class="aside__items">
               <div class="aside__header header-aside">
@@ -133,56 +131,58 @@
                   <a class="header-aside__link" href="#">ZIO Storage</a>
                   <a class="header-aside__link header-aside__link--active">Google Drive</a>
                 </div>
-                <div class="header-aside__profile profile-aside">
-                  <div class="profile-aside__avatar"></div>
-                  <div class="profile-aside__accounts">
-                    <button type="button" class="profile-aside__account-current btn-reset _icon-chevron-down">
+                <div class="main-aside__profile-user profile-user">
+                  <div class="profile-user__preview">
+                    <div class="profile-user__avatar profile-user__avatar--large"></div>
+                  </div>
+                  <div class="profile-user__accounts">
+                    <button type="button" class="profile-user__account-current btn-reset _icon-chevron-down">
                       ivanivanov@zio.me
                     </button>
-                    <div class="profile-aside__wrapper">
-                      <div class="profile-aside__inner">
-                        <div class="profile-aside__content">
-                          <ul class="profile-aside__list list-reset">
-                            <li class="profile-aside__item">
-                              <button type="button"
-                                class="profile-aside__account profile-aside__account--selected btn-reset">
-                                <span class="profile-aside__account-check _icon-check"></span>
-                                <span class="profile-aside__account-body">
-                                  <span class="profile-aside__account-avatar"></span>
-                                  <span class="profile-aside__account-mail">ivanivanov@zio.me</span>
-                                </span>
-                              </button>
-                            </li>
-                            <li class="profile-aside__item">
-                              <button type="button" class="profile-aside__account btn-reset">
-                                <span class="profile-aside__account-check _icon-check"></span>
-                                <span class="profile-aside__account-body">
-                                  <span class="profile-aside__account-avatar"></span>
-                                  <span class="profile-aside__account-mail">ivanivanov@zio.me</span>
-                                </span>
-                              </button>
-                            </li>
-                            <li class="profile-aside__item">
-                              <button type="button" class="profile-aside__account btn-reset">
-                                <span class="profile-aside__account-check _icon-check"></span>
-                                <span class="profile-aside__account-body">
-                                  <span class="profile-aside__account-avatar"></span>
-                                  <span class="profile-aside__account-mail">ivanivanov@zio.me</span>
-                                </span>
-                              </button>
-                            </li>
-                          </ul>
-                          <button type="button"
-                            class="profile-aside__btn-out btn btn--grey btn--small btn-reset _icon-out">
-                            Выйти
-                          </button>
-                        </div>
+                    <div class="profile-user__wrapper">
+                      <div class="profile-user__content">
+                        <ul class="profile-user__list list-reset">
+                          <li class="profile-user__item-account">
+                            <button type="button"
+                              class="profile-user__account profile-user__account--selected btn-reset">
+                              <span class="profile-user__account-check _icon-check"></span>
+                              <span class="profile-user__account-body">
+                                <span class="profile-user__account-avatar"></span>
+                                <span class="profile-user__account-mail">ivanivanov@zio.me</span>
+                              </span>
+                            </button>
+                          </li>
+                          <li class="profile-user__item-account">
+                            <button type="button" class="profile-user__account btn-reset">
+                              <span class="profile-user__account-check _icon-check"></span>
+                              <span class="profile-user__account-body">
+                                <span class="profile-user__account-avatar"></span>
+                                <span class="profile-user__account-mail">ivanivanov@zio.me</span>
+                              </span>
+                            </button>
+                          </li>
+                          <li class="profile-user__item-account">
+                            <button type="button" class="profile-user__account btn-reset">
+                              <span class="profile-user__account-check _icon-check"></span>
+                              <span class="profile-user__account-body">
+                                <span class="profile-user__account-avatar"></span>
+                                <span class="profile-user__account-mail">ivanivanov@zio.me</span>
+                              </span>
+                            </button>
+                          </li>
+                        </ul>
+                        <button type="button"
+                          class="profile-user__btn-out btn btn--grey btn--small btn-reset _icon-out">
+                          Выйти
+                        </button>
                       </div>
                     </div>
                   </div>
-                  <button type="button" class="profile-aside__add btn btn--border btn--large btn-reset _icon-plus">Add
+                  <button type="button"
+                    class="profile-user__add-button btn btn--border btn--large btn-reset _icon-plus">Add
                     account</button>
                 </div>
+
               </div>
               <ul class="aside__list list-reset">
                 <li class="aside__item">
@@ -201,7 +201,7 @@
                 </li>
                 <li class="aside__item">
                   <a class="aside__link" href="#">
-                    <span class="aside__link-icon _icon-disk"></span>
+                    <span class="aside__link-icon _icon-g-disk"></span>
                     <span class="aside__link-name">Import Google Disk</span>
                     <span class="aside__link-count">18</span>
                   </a>
@@ -242,8 +242,8 @@
                 </div>
                 <div class="promo__body">
                   <div class="promo__wrapper">
-                    <div class="promo__title">75% of storage is used</div>
-                    <div class="promo__text">75 MB / 100 MB is used</div>
+                    <div class="promo__title">75% of storage is used</div>
+                    <div class="promo__text">75 MB / 100 MB is used</div>
                   </div>
                   <button type="button" class="promo__btn btn btn--grey btn--small btn-reset _icon-wallet">
                     Upgrade now
@@ -252,9 +252,9 @@
               </div>
             </div>
           </div>
-        </aside> -->
+        </aside>
 
-        <aside class="page__aside aside aside--main">
+        <!-- <aside class="page__aside aside aside--main">
           <div class="aside__clouds main-aside">
             <button type="button" class="main-aside__aside-toggler btn-reset _icon-chevron-down"
               data-aside-open></button>
@@ -274,7 +274,7 @@
                   <div class="column-aside__top">
                     <div class="column-aside__label">Profile</div>
                     <button type="button" class="column-aside__btn-action btn-reset _icon-settings">
-                      <span class="visually-hidden">Add or remove categories</span>
+                      <span class="visually-hidden">Add or remove categories</span>
                     </button>
                   </div>
                   <ul class="column-aside__list list-reset">
@@ -320,7 +320,7 @@
                   <div class="column-aside__top">
                     <div class="column-aside__label">Tools</div>
                     <button type="button" class="column-aside__btn-action btn-reset _icon-settings">
-                      <span class="visually-hidden">Add or remove categories</span>
+                      <span class="visually-hidden">Add or remove categories</span>
                     </button>
                   </div>
                   <ul class="column-aside__list list-reset">
@@ -366,7 +366,7 @@
                   <div class="column-aside__top">
                     <div class="column-aside__label">Teams</div>
                     <button type="button" class="column-aside__btn-action btn-reset _icon-settings">
-                      <span class="visually-hidden">Add or remove categories</span>
+                      <span class="visually-hidden">Add or remove categories</span>
                     </button>
                   </div>
                   <ul class="column-aside__list list-reset">
@@ -391,7 +391,7 @@
                       </div>
                       <button type="button" class="column-aside__btn btn-reset">
                         <span class="column-aside__icon _icon-users"></span>
-                        <span class="column-aside__name">My teams</span>
+                        <span class="column-aside__name">My teams</span>
                       </button>
                     </li>
                     <li class="column-aside__item">
@@ -414,7 +414,7 @@
               </button>
             </div>
           </div>
-        </aside>
+        </aside> -->
 
         <div class="page__content content">
           <div class="content__header">
@@ -434,7 +434,7 @@
             </div>
           </div>
           <div class="content__body">
-            <div class="content__folders-block folders-block" data-showmore="items">
+            <div class="content__folders-block folders-block" data-showmore="size">
               <div class="folders-block__top">
                 <h3 class="folders-block__title h5">Folders</h3>
                 <button type="button" class="folders-block__more-btn btn-reset _icon-chevron-down" data-showmore-button>
@@ -442,7 +442,7 @@
                 </button>
               </div>
               <div class="folders-block__body">
-                <ul class="folders-block__list list-reset" data-showmore-content="1">
+                <ul class="folders-block__list list-reset" data-showmore-content="70">
                   <li class="folders-block__folder item-folder item-folder--active">
                     <div class="item-folder__icon _icon-folder-fill"></div>
                     <div class="item-folder__body">
@@ -606,13 +606,29 @@
                 <ul class="cloud-files-list__list list-reset">Список файлов</ul>
               </div>
             </div> -->
-
-            <br>
             <div class="content__items">
               <div class="content__inner">
                 <div class="content__title">Recent Files</div>
               </div>
               <div class="content__list-files list-files">
+                <div class="list-files__actions actions-block">
+                  <div class="actions-block__count-select">
+                    <button type="button" class="actions-block__remove-select _icon-plus btn-reset">
+                      <span class="visually-hidden">Clear selected items</span>
+                    </button>
+                    <span class="actions-block__count-select-quantity"></span>
+                  </div>
+                  <div class="actions-block__buttons">
+                    <button type="button" class="actions-block__btn-action _icon-plus-user btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                    <button type="button" class="actions-block__btn-action _icon-download btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                    <button type="button" class="actions-block__btn-action _icon-file-move btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                    <button type="button" class="actions-block__btn-action _icon-trash btn-reset"
+                      data-tippy-content="Добавить пользователя"></button>
+                  </div>
+                </div>
                 <div class="list-files__top">
                   <div class="list-files__row">
                     <div class="list-files__col">
@@ -654,136 +670,304 @@
                       <div class="list-files__view">
                         <button type="button" class="list-files__view-btn btn-reset _icon-grid"
                           data-view="grid"></button>
-                        <button type="button" class="list-files__view-btn  btn-reset _icon-align-width"
+                        <button type="button" class="list-files__view-btn _view-active btn-reset _icon-burger"
                           data-view="list"></button>
                       </div>
                     </div>
                   </div>
-                  <div class="list-files__actions actions-block">
-                    <div class="actions-block__count-select">
-                      <button type="button" class="actions-block__remove-select _icon-plus btn-reset">
-                        <span class="visually-hidden">Clear selected items</span>
-                      </button>
-                      2 selected
-                    </div>
-                    <div class="actions-block__buttons">
-                      <button type="button" class="actions-block__btn-action _icon-plus-user btn-reset"
-                        data-tippy-content="Добавить пользователя"></button>
-                      <button type="button" class="actions-block__btn-action _icon-download btn-reset"
-                        data-tippy-content="Добавить пользователя"></button>
-                      <button type="button" class="actions-block__btn-action _icon-file-move btn-reset"
-                        data-tippy-content="Добавить пользователя"></button>
-                      <button type="button" class="actions-block__btn-action _icon-trash btn-reset"
-                        data-tippy-content="Добавить пользователя"></button>
-                    </div>
-                  </div>
                 </div>
                 <div class="list-files__body">
-                  <ul class="list-files__list list-reset">
-                    <li class="list-files__items">
-                      <div class="list-files__item item-files" data-dropdown-parent>
-                        <div class="item-files__row">
-                          <div class="item-files__wrapper">
-                            <div class="item-files__checkbox checkbox">
-                              <label class="checkbox__item checkbox__item--second">
-                                <input class="checkbox__input" type="checkbox">
-                                <span class="checkbox__label"></span>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="item-files__wrapper">
-                            <div class="item-files__documents">
-                              <div class="item-files__icon">
-                                <img src="img/icons/excel.svg" alt="" loading="lazy">
-                              </div>
-                              <div class="item-files__title">File name File name File name File name File name File name
-                              </div>
-                            </div>
-                          </div>
-                          <div class="item-files__wrapper">
-                            <div class="item-files__text">Order №</div>
-                            <div class="item-files__value">122</div>
-                          </div>
-                          <div class="item-files__wrapper">
-                            <div class="item-files__text">Member</div>
-                            <div class="item-files__members members">
-                              <div class="members__items">
-                                <div class="members__item">
-                                  <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
-                                </div>
-                                <div class="members__item">
-                                  <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
-                                </div>
-                                <div class="members__item">
-                                  <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
-                                </div>
-                                <div class="members__item">
-                                  <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
-                                </div>
-                              </div>
-                              <div class="members__more">+3</div>
-                            </div>
-                          </div>
-                          <div class="item-files__wrapper">
-                            <div class="item-files__text">Last Modified</div>
-                            <div class="item-files__value item-files__value--second">25.05.2025</div>
-                          </div>
-                          <div class="item-files__wrapper">
-                            <div class="item-files__text">Size</div>
-                            <div class="item-files__value item-files__value--second">100 MB</div>
-                          </div>
-                          <div class="item-files__wrapper">
-                            <div class="item-files__actions">
-                              <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"
-                                data-tippy-content="Скачать файл"></button>
-                              <button type="button" class="item-files__btn-action btn-reset _icon-download"
-                                data-tippy-content="Скачать файл"></button>
-                              <button type="button" class="item-files__btn-action btn-reset _icon-pen"
-                                data-tippy-content="Скачать файл"></button>
-                              <button type="button" class="item-files__btn-action btn-reset _icon-star"
-                                data-tippy-content="Скачать файл"></button>
-                              <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
-                                data-dropdown></button>
-                            </div>
-                          </div>
+                  <div class="list-files__inner" data-temp="grid">
+
+                    <div class="list-files__item item-files-second">
+                      <div class="item-files-second__top">
+                        <div class="item-files-second__icon-file">
+                          <img src="./img/icons/excel.svg" alt="" loading="lazy">
                         </div>
-                        <div class="item-files__dropdown dropdown-menu">
-                          <ul class="dropdown-menu__list list-reset">
-                            <li class="dropdown-menu__item">
-                              <button type="button" class="dropdown-menu__btn btn-reset _icon-download">
-                                Download
-                              </button>
-                            </li>
-                            <li class="dropdown-menu__item">
-                              <button type="button" class="dropdown-menu__btn btn-reset _icon-copy">
-                                Copy
-                              </button>
-                            </li>
-                            <li class="dropdown-menu__item">
-                              <button type="button" class="dropdown-menu__btn btn-reset _icon-pen">
-                                Rename
-                              </button>
-                            </li>
-                            <li class="dropdown-menu__item">
-                              <button type="button" class="dropdown-menu__btn btn-reset _icon-alert">
-                                Details
-                              </button>
-                            </li>
-                            <li class="dropdown-menu__item">
-                              <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
-                                Add to starred
-                              </button>
-                            </li>
-                            <li class="dropdown-menu__item">
-                              <button type="button" class="dropdown-menu__btn btn-reset _icon-trash">
-                                Delete
-                              </button>
-                            </li>
-                          </ul>
+                        <div class="item-files-second__name">File name</div>
+                        <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+                      </div>
+                      <div class="item-files-second__body">
+                        <div class="item-files-second__image">
+                          <picture><source srcset="./img/files/01.webp" type="image/webp"><img src="./img/files/01.webp" alt="" loading="lazy"></picture>
                         </div>
                       </div>
-                    </li>
-                  </ul>
+                    </div>
+                    <div class="list-files__item item-files-second">
+                      <div class="item-files-second__top">
+                        <div class="item-files-second__icon-file">
+                          <img src="./img/icons/excel.svg" alt="" loading="lazy">
+                        </div>
+                        <div class="item-files-second__name">File name</div>
+                        <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+                      </div>
+                      <div class="item-files-second__body">
+                        <div class="item-files-second__image">
+                          <picture><source srcset="./img/files/01.webp" type="image/webp"><img src="./img/files/01.webp" alt="" loading="lazy"></picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-files__item item-files-second">
+                      <div class="item-files-second__top">
+                        <div class="item-files-second__icon-file">
+                          <img src="./img/icons/excel.svg" alt="" loading="lazy">
+                        </div>
+                        <div class="item-files-second__name">File name</div>
+                        <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+                      </div>
+                      <div class="item-files-second__body">
+                        <div class="item-files-second__image">
+                          <picture><source srcset="./img/files/01.webp" type="image/webp"><img src="./img/files/01.webp" alt="" loading="lazy"></picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-files__item item-files-second">
+                      <div class="item-files-second__top">
+                        <div class="item-files-second__icon-file">
+                          <img src="./img/icons/excel.svg" alt="" loading="lazy">
+                        </div>
+                        <div class="item-files-second__name">File name</div>
+                        <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+                      </div>
+                      <div class="item-files-second__body">
+                        <div class="item-files-second__image">
+                          <picture><source srcset="./img/files/01.webp" type="image/webp"><img src="./img/files/01.webp" alt="" loading="lazy"></picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-files__item item-files-second">
+                      <div class="item-files-second__top">
+                        <div class="item-files-second__icon-file">
+                          <img src="./img/icons/excel.svg" alt="" loading="lazy">
+                        </div>
+                        <div class="item-files-second__name">File name</div>
+                        <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+                      </div>
+                      <div class="item-files-second__body">
+                        <div class="item-files-second__image">
+                          <picture><source srcset="./img/files/01.webp" type="image/webp"><img src="./img/files/01.webp" alt="" loading="lazy"></picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-files__item item-files-second">
+                      <div class="item-files-second__top">
+                        <div class="item-files-second__icon-file">
+                          <img src="./img/icons/excel.svg" alt="" loading="lazy">
+                        </div>
+                        <div class="item-files-second__name">File name</div>
+                        <button type="button" class="item-files-second__action-btn _icon-dotts-vert btn-reset"></button>
+                      </div>
+                      <div class="item-files-second__body">
+                        <div class="item-files-second__image">
+                          <picture><source srcset="./img/files/01.webp" type="image/webp"><img src="./img/files/01.webp" alt="" loading="lazy"></picture>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="list-files__item item-files" data-dropdown-parent>
+                      <div class="item-files__row">
+                        <div class="item-files__wrapper">
+                          <div class="item-files__checkbox checkbox">
+                            <label class="checkbox__item checkbox__item--second">
+                              <input class="checkbox__input" type="checkbox">
+                              <span class="checkbox__label"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__documents">
+                            <div class="item-files__icon">
+                              <img src="img/icons/excel.svg" alt="" loading="lazy">
+                            </div>
+                            <div class="item-files__title">File name File name File name File name File name File
+                              name
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Order №</div>
+                          <div class="item-files__value">122</div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Member</div>
+                          <div class="item-files__members members">
+                            <div class="members__items">
+                              <div class="members__item">
+                                <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
+                              </div>
+                              <div class="members__item">
+                                <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
+                              </div>
+                              <div class="members__item">
+                                <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
+                              </div>
+                              <div class="members__item">
+                                <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
+                              </div>
+                            </div>
+                            <div class="members__more">+3</div>
+                          </div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Last Modified</div>
+                          <div class="item-files__value item-files__value--second">25.05.2025</div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Size</div>
+                          <div class="item-files__value item-files__value--second">100 MB</div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__actions">
+                            <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-download"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-pen"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-star"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
+                              data-dropdown></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-files__dropdown dropdown-menu">
+                        <ul class="dropdown-menu__list list-reset">
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-download">
+                              Download
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-copy">
+                              Copy
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-pen">
+                              Rename
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-alert">
+                              Details
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
+                              Add to starred
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-trash">
+                              Delete
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="list-files__item item-files" data-dropdown-parent>
+                      <div class="item-files__row">
+                        <div class="item-files__wrapper">
+                          <div class="item-files__checkbox checkbox">
+                            <label class="checkbox__item checkbox__item--second">
+                              <input class="checkbox__input" type="checkbox">
+                              <span class="checkbox__label"></span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__documents">
+                            <div class="item-files__icon">
+                              <img src="img/icons/word.svg" alt="" loading="lazy">
+                            </div>
+                            <div class="item-files__title">File name File name
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Order №</div>
+                          <div class="item-files__value">122</div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Member</div>
+                          <div class="item-files__members members">
+                            <div class="members__items">
+                              <div class="members__item">
+                                <picture><source srcset="img/members/01.webp" type="image/webp"><img src="img/members/01.webp" alt="" loading="lazy"></picture>
+                              </div>
+                              <div class="members__item">
+                                <picture><source srcset="img/members/02.webp" type="image/webp"><img src="img/members/02.webp" alt="" loading="lazy"></picture>
+                              </div>
+                              <div class="members__item">
+                                <picture><source srcset="img/members/03.webp" type="image/webp"><img src="img/members/03.webp" alt="" loading="lazy"></picture>
+                              </div>
+                              <div class="members__item">
+                                <picture><source srcset="img/members/04.webp" type="image/webp"><img src="img/members/04.webp" alt="" loading="lazy"></picture>
+                              </div>
+                            </div>
+                            <div class="members__more">+3</div>
+                          </div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Last Modified</div>
+                          <div class="item-files__value item-files__value--second">25.05.2025</div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__text">Size</div>
+                          <div class="item-files__value item-files__value--second">100 MB</div>
+                        </div>
+                        <div class="item-files__wrapper">
+                          <div class="item-files__actions">
+                            <button type="button" class="item-files__btn-action btn-reset _icon-plus-user"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-download"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-pen"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-star"
+                              data-tippy-content="Скачать файл"></button>
+                            <button type="button" class="item-files__btn-action btn-reset _icon-dotts-vert"
+                              data-dropdown></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-files__dropdown dropdown-menu">
+                        <ul class="dropdown-menu__list list-reset">
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-download">
+                              Download
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-copy">
+                              Copy
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-pen">
+                              Rename
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-alert">
+                              Details
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-star">
+                              Add to starred
+                            </button>
+                          </li>
+                          <li class="dropdown-menu__item">
+                            <button type="button" class="dropdown-menu__btn btn-reset _icon-trash">
+                              Delete
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div> -->
+                  </div>
                   <!-- <div class="list-files__item item-files" data-dropdown-parent>
                     <div class="item-files__row">
                       <div class="item-files__wrapper">
@@ -1122,7 +1306,7 @@
     <button type="button" class="notifications-content__btn-view btn btn--grey btn-reset">View all</button>
   </div>
 </div>
-  <script src="js/app.min.js?_v=20250909173849"></script>
+  <script src="js/app.min.js?_v=20250910154213"></script>
 </body>
 
 </html>
